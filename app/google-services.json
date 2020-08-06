@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "74520897821",
+    "firebase_url": "https://otago-virtual-id.firebaseio.com",
+    "project_id": "otago-virtual-id",
+    "storage_bucket": "otago-virtual-id.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74520897821:android:ff760321ac0839444119f4",
+        "android_client_info": {
+          "package_name": "com.otago.otagovirtualid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "74520897821-vpphkjdh41145l2c7kci36bbeof2ifpm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2ATL65AJqIgcYWwBTg_mQhg6lB0-CEWE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "74520897821-vpphkjdh41145l2c7kci36bbeof2ifpm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
