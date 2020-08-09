@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "8104934991",
+    "firebase_url": "https://otago-virtual-id-11890.firebaseio.com",
+    "project_id": "otago-virtual-id-11890",
+    "storage_bucket": "otago-virtual-id-11890.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8104934991:android:98cd972bb7a881d6e7343a",
+        "android_client_info": {
+          "package_name": "com.otago.otagovirtualid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "8104934991-gori51a53svcinae8dqaudgdlcbj5icp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.otago.otagovirtualid",
+            "certificate_hash": "e8da795ac3ad802e7287f249d968b41f4aa0cc0e"
+          }
+        },
+        {
+          "client_id": "8104934991-ns067rm2414vcblpo03kukgnb1iuv50i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtra2wNuDdr7nnKQrL2x6G0ke5cbtZVKI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "8104934991-ns067rm2414vcblpo03kukgnb1iuv50i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
