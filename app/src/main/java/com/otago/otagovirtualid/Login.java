@@ -28,6 +28,10 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // Get the Intent that started this activity and extract the string
+        Intent intent = getIntent();
+
+
         mUsername = findViewById(R.id.txtUsername);
         mPassword = findViewById(R.id.txtPassword);
         fAuth = FirebaseAuth.getInstance();
