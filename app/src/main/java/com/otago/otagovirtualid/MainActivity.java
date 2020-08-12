@@ -19,5 +19,13 @@ public class MainActivity extends AppCompatActivity {
         // Do something in response to button
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
+
+    }
+
+    //Called when user clicks askOtago
+    public void askOtago(View view) {
+        // Do something in response to button
+        Intent intent = new Intent(this, AskOtagoActivity.class);
+        startActivity(intent);
     }
 }

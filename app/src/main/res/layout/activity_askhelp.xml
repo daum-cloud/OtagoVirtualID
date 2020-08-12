@@ -1,6 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/submitForm"
+        android:layout_width="443dp"
+        android:layout_height="80dp"
+        android:background="#e6e6e6"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="95dp"
+        android:text="Submit a Form"
+
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.439" />
+
+    <TextView
+        android:id="@+id/details"
+        android:layout_width="212dp"
+        android:layout_height="75dp"
+        android:text="Freephone: 0800 80 80 98\nTel: +64 3 479 7000\nEmail: university@otago.ac.nz "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.158"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.287" />
+
+    <TextView
+        android:id="@+id/contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Contact Us"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/askOtagoTitle"
+        android:layout_width="180dp"
+        android:layout_height="61dp"
+        android:text="AskOtago"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.167" />
+
+    <ImageView
+        android:id="@+id/paperPlane"
+        android:layout_width="48dp"
+        android:layout_height="67dp"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/submitForm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintStart_toStartOf="@+id/submitForm"
+        app:layout_constraintTop_toTopOf="@+id/submitForm"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/paperplaceyellow" />
+
+    <ImageView
+        android:id="@+id/personIcon"
+        android:layout_width="62dp"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintStart_toStartOf="@+id/submitForm"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.063"
+        app:srcCompat="@drawable/personyellow" />
+
+
+    <LinearLayout
+        android:id="@+id/icons"
+        android:layout_width="47dp"
+        android:layout_height="199dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="124dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/submitForm">
+
+        <ImageView
+            android:id="@+id/facebookIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/facebookicon" />
+
+        <ImageView
+            android:id="@+id/linkedInIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/linkedinicon" />
+
+        <ImageView
+            android:id="@+id/twitterIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/twittericon" />
+
+        <ImageView
+            android:id="@+id/instagramIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/instagramicon" />
+
+        <ImageView
+            android:id="@+id/ytIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/yticon" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/links"
+        android:layout_width="116dp"
+        android:layout_height="198dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="124dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/icons"
+        app:layout_constraintTop_toBottomOf="@+id/submitForm">
+
+        <TextView
+            android:id="@+id/facebookText"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/facebookText" />
+
+        <TextView
+            android:id="@+id/linkedInText"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/linkedInText" />
+
+        <TextView
+            android:id="@+id/twitterText"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/twitterText" />
+
+        <TextView
+            android:id="@+id/instagramText"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/instagramText" />
+
+        <TextView
+            android:id="@+id/youtubeText"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/ytText" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
