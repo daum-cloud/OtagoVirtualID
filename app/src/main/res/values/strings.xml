@@ -2,4 +2,12 @@
     <string name="app_name">Otago Virtual ID</string>
     <string name="button_login">Login</string>
 
+    <string name="ask_help">AskOtago</string>
+
+    <string name="facebookText"><a href="https://www.facebook.com/otagouniversity/">Facebook</a></string>
+    <string name="linkedInText"><a href="https://www.linkedin.com/school/university-of-otago/">LinkedIn</a></string>
+    <string name="twitterText"><a href="https://twitter.com/otago?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter</a></string>
+    <string name="instagramText"><a href="https://www.instagram.com/universityofotago/?hl=en">Instagram</a></string>
+    <string name="ytText"><a href="https://www.youtube.com/channel/UCPVjZXotZ5oX9jyXlFFRj2w">Youtube</a></string>
+
 </resources>
