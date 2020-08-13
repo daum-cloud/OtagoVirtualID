@@ -28,4 +28,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AskOtagoActivity.class);
         startActivity(intent);
     }
+
+    public void idTemplate(View view){
+        //Do something in response to button
+        Intent intent = new Intent(this, idTemplateActivity.class);
+        startActivity(intent);
+    }
 }
