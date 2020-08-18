@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 public class AskOtagoActivity extends AppCompatActivity{
 
+    Button submitForm;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Intent intent = getIntent();
@@ -23,8 +25,33 @@ public class AskOtagoActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_askhelp);
 
+        submitForm = findViewById(R.id.submitForm);
+
+
+        //Links that lead user to browser
         TextView fb = (TextView) findViewById(R.id.facebookText);
         fb.setMovementMethod(LinkMovementMethod.getInstance());
+
+        TextView ln = (TextView) findViewById(R.id.linkedInText);
+        ln.setMovementMethod(LinkMovementMethod.getInstance());
+
+        TextView insta = (TextView) findViewById(R.id.instagramText);
+        insta.setMovementMethod(LinkMovementMethod.getInstance());
+
+        TextView twtr = (TextView) findViewById(R.id.twitterText);
+        twtr.setMovementMethod(LinkMovementMethod.getInstance());
+
+        TextView yt = (TextView) findViewById(R.id.youtubeText);
+        yt.setMovementMethod(LinkMovementMethod.getInstance());
+
+        //When user clicks help form button
+        submitForm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),FormActivity.class));
+            }
+        });
+
 
 
 

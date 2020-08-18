@@ -60,15 +60,14 @@
 
     <ImageView
         android:id="@+id/paperPlane"
-        android:layout_width="48dp"
-        android:layout_height="67dp"
+        android:layout_width="50dp"
+        android:layout_height="64dp"
         android:translationZ="90dp"
         app:layout_constraintBottom_toBottomOf="@+id/submitForm"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintHorizontal_bias="0.082"
         app:layout_constraintStart_toStartOf="@+id/submitForm"
         app:layout_constraintTop_toTopOf="@+id/submitForm"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/paperplaceyellow" />
 
     <ImageView
@@ -86,16 +85,16 @@
 
     <LinearLayout
         android:id="@+id/icons"
-        android:layout_width="47dp"
-        android:layout_height="199dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="45dp"
+        android:layout_height="198dp"
         android:layout_marginBottom="124dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/links"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintHorizontal_bias="0.087"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submitForm">
+        app:layout_constraintTop_toTopOf="@+id/links"
+        app:layout_constraintVertical_bias="0.06">
 
         <ImageView
             android:id="@+id/facebookIcon"
@@ -111,35 +110,36 @@
 
         <ImageView
             android:id="@+id/twitterIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
             app:srcCompat="@drawable/twittericon" />
 
         <ImageView
             android:id="@+id/instagramIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
             app:srcCompat="@drawable/instagramicon" />
 
         <ImageView
             android:id="@+id/ytIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
             app:srcCompat="@drawable/yticon" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/links"
         android:layout_width="116dp"
-        android:layout_height="198dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="60dp"
         android:layout_marginBottom="124dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/icons"
-        app:layout_constraintTop_toBottomOf="@+id/submitForm">
+        app:layout_constraintTop_toBottomOf="@+id/submitForm"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/facebookText"
@@ -168,7 +168,7 @@
         <TextView
             android:id="@+id/youtubeText"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="29dp"
             android:text="@string/ytText" />
     </LinearLayout>
 
