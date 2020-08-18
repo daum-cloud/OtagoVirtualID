@@ -10,19 +10,29 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".FormActivity"
-            android:parentActivityName=".AskOtagoActivity"
-            android:label="Submit Form"
-            >
+            android:name=".UploadImageActivity"
+            android:label="Upload Image"
+            android:parentActivityName=".MainActivity">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".AskOtagoActivity" /></activity>
+                android:value=".AskOtagoActivity" />
+        ></activity>
+        <activity
+            android:name=".FormActivity"
+            android:label="Submit Form"
+            android:parentActivityName=".AskOtagoActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".AskOtagoActivity" />
+        </activity>
         <activity
             android:name=".AskOtagoActivity"
-            android:parentActivityName=".MainActivity"
-            android:label="AskOtago">
-
+            android:label="AskOtago"
+            android:parentActivityName=".MainActivity">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data

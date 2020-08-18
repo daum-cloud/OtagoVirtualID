@@ -28,4 +28,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AskOtagoActivity.class);
         startActivity(intent);
     }
+
+    //Called when user clicks Upload Image
+    public void uploadImage(View view) {
+        // Do something in response to button
+        Intent intent = new Intent(this, UploadImageActivity.class);
+        startActivity(intent);
+    }
 }
