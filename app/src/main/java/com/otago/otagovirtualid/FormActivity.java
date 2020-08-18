@@ -40,14 +40,7 @@ public class FormActivity extends AppCompatActivity {
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto:otagovirtualid@gmail.com"));
-                intent.putExtra(Intent.EXTRA_SUBJECT, subject.getText().toString().trim());
-                intent.putExtra(Intent.EXTRA_TEXT, msg.getText().toString().trim());
-                startActivity(intent);
-                System.out.println(subject.getText().toString());*/
-
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
-                //intent.setType("message/rfc822");
                 intent.setData(Uri.parse("mailto:"));
                 intent.putExtra(Intent.EXTRA_EMAIL, addresses); //For some reason EXTRA_EMAIL only takes string arrays
                 intent.putExtra(Intent.EXTRA_SUBJECT, subject.getText().toString());
@@ -55,7 +48,6 @@ public class FormActivity extends AppCompatActivity {
                 if (intent.resolveActivity(getPackageManager()) != null) {
                     startActivity(intent);
                 }
-                //startActivity(Intent.createChooser(intent, "Send Email"));
             }
         });
     }
