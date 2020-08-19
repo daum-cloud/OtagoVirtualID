@@ -12,6 +12,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -21,13 +23,14 @@ import java.util.Date;
 
 public class idTemplateActivity extends AppCompatActivity {
 
-    //Get a reference to the User
+    //Get a Realtime Database
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
-    //Instance to the first user
+    //Get the instance
     DatabaseReference ref = database.getReference();
-
     //Currently set to user for the example process
     DatabaseReference userref = ref.child("user");
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +52,7 @@ public class idTemplateActivity extends AppCompatActivity {
                 txtEmail.setText(snapshot.child("email").getValue(String.class));
                 txtIDNo.setText(snapshot.child("studentID").getValue(String.class));
                 txtName.setText(snapshot.child("firstName").getValue(String.class) + " " + snapshot.child("lastName").getValue(String.class));
-                txtStudent.setText(snapshot.child("studentCode").getValue(String.class));
+                //txtStudent.setText(snapshot.child("studentCode").getValue(String.class));
                 Date date = Calendar.getInstance().getTime();
                 DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
                 String strDate = dateFormat.format(date);
