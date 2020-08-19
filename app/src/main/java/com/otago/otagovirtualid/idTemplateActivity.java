@@ -13,39 +13,62 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 
 public class idTemplateActivity extends AppCompatActivity {
 
     //Get a reference to the User
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference ref = database.getReference("/otago-virtual-id/user");
+    //Instance to the first user
+    DatabaseReference ref = database.getReference();
+
+    //Currently set to user for the example process
+    DatabaseReference userref = ref.child("user");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_id_template);
 
-        User user = null;
+        final TextView txtUsername = findViewById(R.id.txtUsername);
+        final TextView txtEmail = findViewById(R.id.txtEmail);
+        final TextView txtIDNo = findViewById(R.id.txtIDNo);
+        final TextView txtName = findViewById(R.id.txtName);
+        final TextView txtStudent = findViewById(R.id.txtStudent); //Not implemented just yet - possible for future releases
+        final TextView txtDate = findViewById(R.id.txtDate);
 
-        ref.addValueEventListener(new ValueEventListener() {
+
+        userref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                User user = snapshot.getValue(User.class);
+                txtUsername.setText(snapshot.child("studentCode").getValue(String.class));
+                txtEmail.setText(snapshot.child("email").getValue(String.class));
+                txtIDNo.setText(snapshot.child("studentID").getValue(String.class));
+                txtName.setText(snapshot.child("firstName").getValue(String.class) + " " + snapshot.child("lastName").getValue(String.class));
+                txtStudent.setText(snapshot.child("studentCode").getValue(String.class));
+                Date date = Calendar.getInstance().getTime();
+                DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+                String strDate = dateFormat.format(date);
+                txtDate.setText(strDate);
+
+
+
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(idTemplateActivity.this, "Failed to read database. Contact System Admin", Toast.LENGTH_SHORT).show();
+                Toast.makeText(idTemplateActivity.this, "Error with retrieving ID. Contact System Admin IN DATABASE", Toast.LENGTH_LONG).show();
             }
         });
 
-        TextView txtViewID = findViewById(R.id.txtName);
 
-        if(user != null) {
-            txtViewID.setText(user.getFirstName() + " " + user.getLastName());
-        } else {
-            Toast.makeText(idTemplateActivity.this, "Error with retrieving ID. Contact System Admin", Toast.LENGTH_LONG).show();
-        }
+
+
+
 
 
 

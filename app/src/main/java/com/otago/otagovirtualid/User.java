@@ -15,6 +15,10 @@ public class User {
     String uRLPrevPhoto;
     String uRLProofDoc;
 
+    public User(){
+
+    }
+
     public User(String authID, String email, String enrollingPeriod, String firstName, String lastName, Papers papers, String password, String phone, String studentCode, String studentID, String uRLCurrPhoto, String uRLPrevPhoto, String uRLProofDoc) {
         this.authID = authID;
         this.email = email;
