@@ -10,13 +10,13 @@
         android:id="@+id/galleryBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
         android:text="Gallery"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.762" />
+        app:layout_constraintVertical_bias="0.816" />
 
     <Button
         android:id="@+id/cameraBtn"
@@ -27,17 +27,6 @@
         android:text="Camera"
         app:layout_constraintBaseline_toBaselineOf="@+id/galleryBtn"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageView
-        android:id="@+id/uploadedImage"
-        android:layout_width="247dp"
-        android:layout_height="244dp"
-        android:layout_marginTop="44dp"
-        android:contentDescription="Image to be uploaded by user"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleUploadImage"
-        app:srcCompat="@drawable/qmark" />
 
     <TextView
         android:id="@+id/titleUploadImage"
@@ -55,4 +44,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.19" />
+
+    <ImageView
+        android:id="@+id/selectedImage"
+        android:layout_width="0dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleUploadImage"
+        app:layout_constraintVertical_bias="0.114"
+        app:srcCompat="@drawable/ic_launcher_background" />
 </androidx.constraintlayout.widget.ConstraintLayout>
