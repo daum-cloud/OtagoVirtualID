@@ -26,6 +26,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
@@ -47,7 +48,9 @@ public class UploadImageActivity extends AppCompatActivity {
     ImageView selectedImg;
     Button galleryBtn, cameraBtn, submitBtn;
     String currentPhotoPath;
-    private StorageReference storageRef;
+    File file;
+    public Uri imageUri;
+    private StorageReference mstorageRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,12 +62,11 @@ public class UploadImageActivity extends AppCompatActivity {
         cameraBtn = findViewById(R.id.cameraBtn);
         submitBtn = findViewById(R.id.submitBtn);
 
-        storageRef = FirebaseStorage.getInstance().getReference();
+        mstorageRef = FirebaseStorage.getInstance().getReference("ID Images to Review");
 
         cameraBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(UploadImageActivity.this, "Camera button responding", Toast.LENGTH_SHORT).show();
                 askCameraPermission();
             }
         });
@@ -72,11 +74,9 @@ public class UploadImageActivity extends AppCompatActivity {
         galleryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(UploadImageActivity.this, "Gallery button responding", Toast.LENGTH_SHORT).show();
-                //Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                //startActivityForResult(gallery, GALLERY_REQUEST_CODE);
-                Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
+                Intent photoPickerIntent = new Intent();
                 photoPickerIntent.setType("image/*");
+                photoPickerIntent.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(photoPickerIntent, GALLERY_REQUEST_CODE);
             }
         });
@@ -84,10 +84,38 @@ public class UploadImageActivity extends AppCompatActivity {
         submitBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
+                FireBaseFileUploader();
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
         });
 
+    }
+
+    private String getExtension(Uri uri) {
+        ContentResolver cr = getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cr.getType(uri));
+    }
+
+    private void FireBaseFileUploader() {
+        StorageReference ref = mstorageRef.child(System.currentTimeMillis()+"."+getExtension(imageUri));
+
+        ref.putFile(imageUri)
+                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        // Get a URL to the uploaded content
+                        //Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                        Toast.makeText(UploadImageActivity.this, "Image Upload Success - To be Checked by Staff", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception exception) {
+                        // Handle unsuccessful uploads
+                        // ...
+                    }
+                });
     }
 
    
@@ -110,7 +138,6 @@ public class UploadImageActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(this, "Camera Permision required to use camera", Toast.LENGTH_SHORT).show();
             }
-
         }
     }
 
@@ -124,62 +151,19 @@ public class UploadImageActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == CAMERA_REQUEST_CODE) {
-           /* Bitmap image = (Bitmap) data.getExtras().get("data");
-            selectedImg.setImageBitmap(image);
-            */
-            if (resultCode == RESULT_OK) {
-                File f = new File(currentPhotoPath);
-                selectedImg.setImageURI(Uri.fromFile(f));
-                submitBtn.setVisibility(View.VISIBLE);
-                //Toast.makeText(this, "Trello", Toast.LENGTH_SHORT).show();
-                //Bitmap image = (Bitmap) data.getExtras().get("data");
-                //selectedImg.setImageBitmap(image);
-                //Log.d("tag", "Absolute URL = " + Uri.fromFile(f));
-
-                //Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-                //File f = new File(currentPhotoPath);
-                //Uri contentUri = Uri.fromFile(f);
-                //mediaScanIntent.setData(contentUri);
-                //this.sendBroadcast(mediaScanIntent);
-            }
+        if (requestCode == CAMERA_REQUEST_CODE && resultCode == RESULT_OK) {
+            file = new File(currentPhotoPath);
+            selectedImg.setImageURI(Uri.fromFile(file));
+            imageUri = Uri.fromFile(file);
+            submitBtn.setVisibility(View.VISIBLE);
         }
-        /*if (requestCode == GALLERY_REQUEST_CODE) {
-           if(requestCode == RESULT_OK){
-               Uri contentUri = data.getData();
-               String timeStamp =  new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-               String imageFileName = "JPEG_" + timeStamp + "." + getFileExt(contentUri);
-               Log.d("tag", "Absolute URL for gallery image = " + imageFileName);
-               selectedImg.setImageURI(contentUri);
-           }*/
-        if (requestCode == GALLERY_REQUEST_CODE) {
-            if (resultCode == RESULT_OK) {
-                try {
-                    final Uri imageUri = data.getData();
-                    final InputStream imageStream = getContentResolver().openInputStream(imageUri);
-                    final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
-                   // Bitmap selectedImage = (Bitmap) data.getExtras().get("data");
-                    selectedImg.setImageBitmap(selectedImage);
-                    submitBtn.setVisibility(View.VISIBLE);
-
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                    Toast.makeText(UploadImageActivity.this, "Something went wrong", Toast.LENGTH_LONG).show();
-                }
-
-            } else {
-                Toast.makeText(UploadImageActivity.this, "You haven't picked Image", Toast.LENGTH_LONG).show();
-            }
+        if (requestCode == GALLERY_REQUEST_CODE && resultCode == RESULT_OK) {
+            imageUri = data.getData();
+            selectedImg.setImageURI(imageUri);
+            submitBtn.setVisibility(View.VISIBLE);
         }
-
     }
 
-    private String getFileExt(Uri contentUri) {
-        ContentResolver c = getContentResolver();
-        MimeTypeMap mime = MimeTypeMap.getSingleton();
-        return mime.getExtensionFromMimeType(c.getType(contentUri));
-    }
 
 
     private File createImageFile() throws IOException {
