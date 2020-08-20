@@ -28,4 +28,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AskOtagoActivity.class);
         startActivity(intent);
     }
+
+    //Called when user clicks perks button
+    public void perkButton(View view) {
+        Intent intent = new Intent(this, StudentPerks.class);
+        startActivity(intent);
+    }
+
 }
