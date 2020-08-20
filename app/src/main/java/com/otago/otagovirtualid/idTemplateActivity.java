@@ -52,9 +52,9 @@ public class idTemplateActivity extends AppCompatActivity {
                 txtEmail.setText(snapshot.child("email").getValue(String.class));
                 txtIDNo.setText(snapshot.child("studentID").getValue(String.class));
                 txtName.setText(snapshot.child("firstName").getValue(String.class) + " " + snapshot.child("lastName").getValue(String.class));
-                //txtStudent.setText(snapshot.child("studentCode").getValue(String.class));
+                //txtStudent.setText(snapshot.child("studentCode").getValue(String.class)); //See above comment
                 Date date = Calendar.getInstance().getTime();
-                DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+                DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
                 String strDate = dateFormat.format(date);
                 txtDate.setText(strDate);
 
