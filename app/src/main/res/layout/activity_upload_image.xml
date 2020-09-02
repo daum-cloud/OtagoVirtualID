@@ -16,7 +16,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.831" />
+        app:layout_constraintVertical_bias="0.821" />
 
     <Button
         android:id="@+id/cameraBtn"
@@ -40,22 +40,21 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintHorizontal_bias="0.436"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <ImageView
         android:id="@+id/selectedImage"
-        android:layout_width="0dp"
-        android:layout_height="190dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="211dp"
+        android:layout_height="294dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleUploadImage"
-        app:layout_constraintVertical_bias="0.114"
+        app:layout_constraintVertical_bias="0.25"
         app:srcCompat="@drawable/ic_launcher_background" />
 
     <Button
@@ -66,7 +65,7 @@
         android:text="Submit"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintHorizontal_bias="0.904"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cameraBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

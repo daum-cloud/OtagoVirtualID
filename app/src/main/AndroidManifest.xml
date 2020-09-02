@@ -20,7 +20,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".UploadImageActivity"
-            android:label="Upload Image"
+            android:label="MyID"
             android:parentActivityName=".MainActivity">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
