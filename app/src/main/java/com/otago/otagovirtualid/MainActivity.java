@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Called when user clicks perks button
     public void perkButton(View view) {
-        Intent intent = new Intent(this, StudentPerks.class);
+        Intent intent = new Intent(this, PerkListActivity.class);
         startActivity(intent);
     }
 
