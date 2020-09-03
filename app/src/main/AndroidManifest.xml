@@ -40,14 +40,14 @@
 
 
 
-        <activity android:name=".idTemplateActivity"></activity>
-                android:value=".AskOtagoActivity" />
+        <activity android:name=".idTemplateActivity">
+
         </activity>
+
         <activity
             android:name=".AskOtagoActivity"
-            android:parentActivityName=".MainActivity">
-            android:label="AskOtago"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:label="AskOtago">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
@@ -93,7 +93,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/file_paths"/>
         </provider>
     </application>
 
