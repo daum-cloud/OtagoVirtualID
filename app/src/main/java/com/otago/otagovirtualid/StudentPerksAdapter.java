@@ -66,7 +66,7 @@ public class StudentPerksAdapter extends RecyclerView.Adapter<StudentPerksAdapte
         TextView textView = holder.nameTextView;
         textView.setText(perks.getName());
         Button button = holder.activeButton;
-        button.setText(perks.isOnline() ? "Active" : "EXPIRED");
+        button.setText(perks.isOnline() ? "ACTIVE" : "EXPIRED");
         button.setEnabled(perks.isOnline());
     }
 
