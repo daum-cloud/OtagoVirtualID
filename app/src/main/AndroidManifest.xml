@@ -2,6 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.otago.otagovirtualid">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!--<uses-feature android:name="android.hardware.camera" android:required="true" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-feature android:name="android.hardware.location.gps" />-->
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/draft2virtual_id_logo"
@@ -10,10 +19,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".UploadImageActivity"
+            android:label="MyID"
+            android:parentActivityName=".MainActivity">
+
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".AskOtagoActivity" />
+        </activity>
+        <activity
             android:name=".FormActivity"
-            android:parentActivityName=".AskOtagoActivity"
             android:label="Submit Form"
-            >
+            android:parentActivityName=".AskOtagoActivity">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -22,8 +41,12 @@
 
 
         <activity android:name=".idTemplateActivity"></activity>
+                android:value=".AskOtagoActivity" />
+        </activity>
         <activity
             android:name=".AskOtagoActivity"
+            android:parentActivityName=".MainActivity">
+            android:label="AskOtago"
             android:parentActivityName=".MainActivity">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
@@ -62,6 +85,16 @@
                 android:value=".MainActivity" />
         </activity>
 
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.otago.android.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+        </provider>
     </application>
 
 </manifest>

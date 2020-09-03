@@ -9,96 +9,105 @@
     <EditText
         android:id="@+id/editTextMessageBox"
         android:layout_width="0dp"
-        android:layout_height="168dp"
-        android:layout_marginTop="52dp"
+        android:layout_height="165dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="@+id/editTextEmailSubject"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextEmailSubject"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmailSubject" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/messageText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.568" />
 
     <Button
         android:id="@+id/submitButton"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
         android:text="Submit"
-        app:layout_constraintBottom_toBottomOf="@+id/cancelButton"
-        app:layout_constraintEnd_toEndOf="@+id/editTextMessageBox"
-        app:layout_constraintHorizontal_bias="0.877"
-        app:layout_constraintStart_toEndOf="@+id/cancelButton" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/cancelButton"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/editTextEmailSubject"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="248dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
         android:ems="10"
         android:inputType="textEmailSubject"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/subjectText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.386" />
 
     <TextView
         android:id="@+id/messageText"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:text="Message:"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextMessageBox"
-        app:layout_constraintEnd_toEndOf="@+id/subjectText"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="@+id/subjectText"
-        app:layout_constraintTop_toTopOf="@+id/editTextMessageBox"
-        app:layout_constraintVertical_bias="0.367" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTextMessageBox"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/cancelButton"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
         android:text="Cancel"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/editTextMessageBox"
-        app:layout_constraintTop_toBottomOf="@+id/editTextMessageBox"
-        app:layout_constraintVertical_bias="0.56" />
+        app:layout_constraintEnd_toStartOf="@+id/submitButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.797" />
 
     <TextView
         android:id="@+id/requestHelp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="163dp"
-        android:layout_marginLeft="163dp"
-        android:layout_marginTop="44dp"
         android:text="Request Help"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.766"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.241" />
 
     <TextView
         android:id="@+id/subjectText"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:text="Subject:"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextEmailSubject"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/editTextEmailSubject"
-        app:layout_constraintVertical_bias="0.379" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTextEmailSubject"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="55dp"
+        android:layout_width="0dp"
         android:layout_height="54dp"
         android:layout_marginStart="178dp"
         android:layout_marginLeft="178dp"
         android:layout_marginTop="76dp"
         android:layout_marginEnd="179dp"
         android:layout_marginRight="179dp"
+        android:contentDescription="question mark icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
