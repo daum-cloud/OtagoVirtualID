@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,7 +30,7 @@ public class idTemplateActivity extends AppCompatActivity {
     //Get the instance
     DatabaseReference ref = database.getReference();
     //Currently set to user for the example process
-    DatabaseReference userref = ref.child("user");
+    DatabaseReference usersref = ref.child("users");
 
 
 
@@ -37,6 +39,7 @@ public class idTemplateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_id_template);
 
+        //Setting the values
         final TextView txtUsername = findViewById(R.id.txtUsername);
         final TextView txtEmail = findViewById(R.id.txtEmail);
         final TextView txtIDNo = findViewById(R.id.txtIDNo);
@@ -44,6 +47,10 @@ public class idTemplateActivity extends AppCompatActivity {
         final TextView txtStudent = findViewById(R.id.txtStudent); //Not implemented just yet - possible for future releases
         final TextView txtDate = findViewById(R.id.txtDate);
 
+        //Get current logged in user from the database:
+        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        //Get the child user for our specific user
+        DatabaseReference userref = usersref.child(currentFirebaseUser.getUid());
 
         userref.addValueEventListener(new ValueEventListener() {
             @Override
