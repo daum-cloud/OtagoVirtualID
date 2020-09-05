@@ -29,6 +29,10 @@ import android.widget.Toast;
 import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -102,7 +106,11 @@ public class UploadImageActivity extends AppCompatActivity {
     }
 
     private void FireBaseFileUploader() {
-        StorageReference ref = mstorageRef.child(System.currentTimeMillis()+"."+getExtension(imageUri));
+        final StorageReference ref = mstorageRef.child(System.currentTimeMillis()+"."+getExtension(imageUri));
+        //Create a reference to the database to put the name of the image into the user's details
+        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        //Toast.makeText(UploadImageActivity.this, "Current user:" + currentFirebaseUser.getUid(), Toast.LENGTH_LONG).show();
+        final DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().child("users").child(currentFirebaseUser.getUid());
 
         ref.putFile(imageUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -110,9 +118,19 @@ public class UploadImageActivity extends AppCompatActivity {
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         // Get a URL to the uploaded content
                         //Uri downloadUrl = taskSnapshot.getDownloadUrl();
-                        //Toast.makeText(UploadImageActivity.this, "Testing URI" + imageUri, Toast.LENGTH_LONG).show();
-                        
                         Toast.makeText(UploadImageActivity.this, "Image Upload Success - To be Checked by Staff", Toast.LENGTH_SHORT).show();
+                        //We want the URL of the image uploaded so we can save it under user's profile:
+
+                        ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                                                           @Override
+                                                                           public void onSuccess(Uri uri) {
+                                                                               Uri downloadUrl = uri;
+                                                                               dbRef.child("uRLCurrPhoto").setValue(downloadUrl.toString());
+                                                                           }
+                                                                       });
+
+
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
