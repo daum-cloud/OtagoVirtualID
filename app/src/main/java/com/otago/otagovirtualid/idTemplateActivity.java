@@ -3,10 +3,15 @@ package com.otago.otagovirtualid;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.net.Uri;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -16,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -46,11 +52,14 @@ public class idTemplateActivity extends AppCompatActivity {
         final TextView txtName = findViewById(R.id.txtName);
         final TextView txtStudent = findViewById(R.id.txtStudent); //Not implemented just yet - possible for future releases
         final TextView txtDate = findViewById(R.id.txtDate);
+        final ImageView imageIDPhoto = findViewById(R.id.imgID);
 
         //Get current logged in user from the database:
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         //Get the child user for our specific user
         DatabaseReference userref = usersref.child(currentFirebaseUser.getUid());
+
+
 
         userref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -65,8 +74,6 @@ public class idTemplateActivity extends AppCompatActivity {
                 String strDate = dateFormat.format(date);
                 txtDate.setText(strDate);
 
-
-
             }
 
             @Override
@@ -74,6 +81,19 @@ public class idTemplateActivity extends AppCompatActivity {
                 Toast.makeText(idTemplateActivity.this, "Error with retrieving ID. Contact System Admin IN DATABASE", Toast.LENGTH_LONG).show();
             }
         });
+
+        //Get their ID image from the cloud storage:
+        //Assemble the string:
+        Calendar now = Calendar.getInstance();
+        int year = now.get(Calendar.YEAR);
+        String yearInString = String.valueOf(year);
+        String reference = "id" + yearInString + "/" +currentFirebaseUser.getUid() +".png";
+        StorageReference storageReference = FirebaseStorage.getInstance().getReference(reference);
+
+        // Download directly from StorageReference using Glide
+                GlideApp.with(this /* context */)
+                        .load(storageReference)
+                        .into(imageIDPhoto);
 
 
 

@@ -38,6 +38,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class UploadImageActivity extends AppCompatActivity {
@@ -62,7 +63,10 @@ public class UploadImageActivity extends AppCompatActivity {
         cameraBtn = findViewById(R.id.cameraBtn);
         submitBtn = findViewById(R.id.submitBtn);
 
-        mstorageRef = FirebaseStorage.getInstance().getReference("ID Images to Review");
+        Calendar now = Calendar.getInstance();
+        int year = now.get(Calendar.YEAR);
+        String yearInString = String.valueOf(year);
+        mstorageRef = FirebaseStorage.getInstance().getReference("id" + yearInString);
 
         cameraBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,6 +110,8 @@ public class UploadImageActivity extends AppCompatActivity {
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         // Get a URL to the uploaded content
                         //Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                        //Toast.makeText(UploadImageActivity.this, "Testing URI" + imageUri, Toast.LENGTH_LONG).show();
+                        
                         Toast.makeText(UploadImageActivity.this, "Image Upload Success - To be Checked by Staff", Toast.LENGTH_SHORT).show();
                     }
                 })
