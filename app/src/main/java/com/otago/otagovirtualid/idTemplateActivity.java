@@ -59,7 +59,6 @@ public class idTemplateActivity extends AppCompatActivity {
         //Get the child user for our specific user
         DatabaseReference userref = usersref.child(currentFirebaseUser.getUid());
 
-        //ImageLinks imagelinks = new ImageLink();
 
         userref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -73,7 +72,8 @@ public class idTemplateActivity extends AppCompatActivity {
                 DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
                 String strDate = dateFormat.format(date);
                 txtDate.setText(strDate);
-                //photoURL[0] = snapshot.child("uRLCurrPhoto").getValue(String.class);
+                //Gets image from the link (going to the Cloud Stroage) and displays it.
+                Glide.with(idTemplateActivity.this).load(snapshot.child("uRLCurrPhoto").getValue()).into(imageIDPhoto);
 
 
             }
@@ -83,19 +83,6 @@ public class idTemplateActivity extends AppCompatActivity {
                 Toast.makeText(idTemplateActivity.this, "Error with retrieving ID. Contact System Admin IN DATABASE", Toast.LENGTH_LONG).show();
             }
         });
-        Toast.makeText(idTemplateActivity.this, "Photo URL", Toast.LENGTH_LONG).show();
-        //Get their ID image from the cloud storage:
-        //Assemble the string:
-        Calendar now = Calendar.getInstance();
-        int year = now.get(Calendar.YEAR);
-        String yearInString = String.valueOf(year);
-        String reference = "id" + yearInString + "/" +currentFirebaseUser.getUid() +".png";
-        StorageReference storageReference = FirebaseStorage.getInstance().getReference(reference);
-
-        // Download directly from StorageReference using Glide
-        //GlideApp.with(this /* context */).load(storageReference).into(imageIDPhoto);
-        //Toast.makeText(idTemplateActivity.this, "Photo URL" + photoURL[0], Toast.LENGTH_LONG).show();
-        Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/otago-virtual-id.appspot.com/o/id2020%2F1599276375823.null?alt=media&token=9a635a92-67d1-4148-8289-d2c45fa786d9").into(imageIDPhoto);
 
 
 
