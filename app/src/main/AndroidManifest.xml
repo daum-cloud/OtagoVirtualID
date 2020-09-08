@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- Needed for testing to see if we can get images from web -->
     <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Needed for saving the QR file to the local storage of the phone -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
 
     <!--<uses-feature android:name="android.hardware.camera" android:required="true" />
