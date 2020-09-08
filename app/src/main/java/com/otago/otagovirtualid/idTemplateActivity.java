@@ -41,7 +41,7 @@ public class idTemplateActivity extends AppCompatActivity {
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     //Get the instance
     DatabaseReference ref = database.getReference();
-    //Currently set to user for the example process
+    //Set reference to the users section
     DatabaseReference usersref = ref.child("users");
 
     //For QR code:
@@ -104,14 +104,6 @@ public class idTemplateActivity extends AppCompatActivity {
                 Toast.makeText(idTemplateActivity.this, "Error with retrieving ID. Contact System Admin IN DATABASE", Toast.LENGTH_LONG).show();
             }
         });
-
-
-
-
-
-
-
-
 
 
     }
