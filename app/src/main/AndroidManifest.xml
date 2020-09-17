@@ -23,16 +23,20 @@
         android:roundIcon="@mipmap/draft4virtual_id_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
         <activity
             android:name=".UploadImageActivity"
             android:label="MyID"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainPage">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".AskOtagoActivity" />
         </activity>
+
+
         <activity
             android:name=".FormActivity"
             android:label="Submit Form"
@@ -43,42 +47,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".AskOtagoActivity" /></activity>
 
-
-
         <activity android:name=".idTemplateActivity">
-
         </activity>
+
+
 
         <activity
             android:name=".AskOtagoActivity"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".MainPage"
             android:label="AskOtago">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".MainPage" />
         </activity>
 
-
-        <activity
-            android:name=".Login"
-            android:parentActivityName=".MainActivity">
-
-            <!-- The meta-data tag is required if you support API level 15 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
-
-
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
         <activity
             android:name=".PerkListActivity"
@@ -87,7 +71,24 @@
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".MainPage" />
+        </activity>
+
+
+        <activity
+            android:name=".MainPage"
+            android:label="Home">
+
+        </activity>
+
+
+
+        <activity android:name=".MainActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
 
