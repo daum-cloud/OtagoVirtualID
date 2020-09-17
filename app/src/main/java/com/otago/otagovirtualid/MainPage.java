@@ -54,4 +54,8 @@ public class MainPage extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Override
+    public void onBackPressed() {
+    }
+
 }
