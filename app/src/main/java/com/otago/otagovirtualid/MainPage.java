@@ -22,11 +22,48 @@ public class MainPage extends AppCompatActivity implements BottomNavigationView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation_view);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
-        bottomNavigationView.setSelectedItemId(R.id.navigation_id);
+        //Navigation instance
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavViewBar);
+
+        //Navigation Method
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()){
+                    case R.id.navigation_home:
+
+                        break;
+
+                    case R.id.navigation_id:
+                        Intent intent1 = new Intent(MainPage.this,idTemplateActivity.class);
+                        startActivity(intent1);
+                        break;
+
+                    case R.id.navigation_perks:
+                        Intent intent2 = new Intent(MainPage.this,PerkListActivity.class);
+                        startActivity(intent2);
+
+                        break;
+
+                    case R.id.navigation_uploadImage:
+                        Intent intent3 = new Intent(MainPage.this,UploadImageActivity.class);
+                        startActivity(intent3);
+                        break;
+
+                    case R.id.navigation_help:
+                        Intent intent4 = new Intent(MainPage.this,AskOtagoActivity.class);
+                        startActivity(intent4);
+                        break;
+                }
+
+
+                return false;
+            }
+        });
+
 
     }
 
