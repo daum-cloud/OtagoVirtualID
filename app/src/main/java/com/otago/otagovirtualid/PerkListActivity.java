@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.otago.otagovirtualid.utils.BottomNavigationHelper;
 
 import java.util.ArrayList;
 
@@ -22,6 +23,8 @@ public class PerkListActivity extends AppCompatActivity {
         // ...
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_perks);
+
+        setupBottomNavigationView();
 
         // Lookup the recyclerview in activity layout
         RecyclerView rvContacts = (RecyclerView) findViewById(R.id.rvPerks);
@@ -38,4 +41,13 @@ public class PerkListActivity extends AppCompatActivity {
 
 
     }
+
+    public void setupBottomNavigationView(){
+
+        //Navigation instance
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavViewBar);
+        BottomNavigationHelper.enableNavigation(PerkListActivity.this, bottomNavigationView);
+    }
+
+
 }
