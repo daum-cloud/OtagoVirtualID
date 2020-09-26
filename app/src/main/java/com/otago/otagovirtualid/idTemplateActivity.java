@@ -27,6 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.zxing.WriterException;
+import com.otago.otagovirtualid.utils.BottomNavigationHelper;
 import com.squareup.picasso.Picasso;
 
 import java.text.DateFormat;
@@ -56,6 +57,9 @@ public class idTemplateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_id_template);
+
+        //call navigation method
+        setupBottomNavigationView();
 
 
         //Setting the values
@@ -109,5 +113,13 @@ public class idTemplateActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public void setupBottomNavigationView(){
+
+        //Navigation instance
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavViewBar);
+        //calling navigation method from class BottomNavigationHelper.
+        BottomNavigationHelper.enableNavigation(idTemplateActivity.this, bottomNavigationView);
     }
 }
