@@ -11,6 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+/**Adapter Class
+ *Used to bridge the imported data to the specified/customised interface
+ *that is a 'listView' in the 'PerksListActivity'.
+ */
+
 public class StudentPerksAdapter extends RecyclerView.Adapter<StudentPerksAdapter.ViewHolder>{
 
     // Provide a direct reference to each of the views within a data item

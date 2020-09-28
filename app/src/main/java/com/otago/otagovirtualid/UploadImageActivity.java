@@ -45,6 +45,14 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+/**Uploading a new profile photo
+ *Activity to provide the user the ability to update their ID
+ *profile image as well as requesting for their permission to
+ *use their devices' camera. The new image is uploaded to the
+ *real-time database which is then to be inspected by AskOtago
+ *staff via a web portal.
+ */
+
 public class UploadImageActivity extends AppCompatActivity {
 
     public static final int CAMERA_PERMISSION_CODE = 101;

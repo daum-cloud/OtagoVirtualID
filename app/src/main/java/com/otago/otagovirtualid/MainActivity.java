@@ -22,6 +22,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+/**Main Activity
+ *The 'Main Activity' or window of interaction with the user
+ *upon application launch, prompting them to log in where they
+ *they will be redirected to "Main Page".
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     EditText mUsername, mPassword;

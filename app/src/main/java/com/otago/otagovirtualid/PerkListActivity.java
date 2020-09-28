@@ -8,13 +8,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+/**Perks Activity class
+ *Creation of the perks activity window as well as
+ *initiating the elements within.
+ */
+
 public class PerkListActivity extends AppCompatActivity {
 
     ArrayList<Perk> perks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // ...
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_perks);
 

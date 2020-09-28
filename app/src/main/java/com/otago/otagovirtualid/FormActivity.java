@@ -9,6 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+/**Submission Form Activity within the "AskOtago" activity
+ *Form to be filled by the user if they need any assistance
+ *from AskOtago to which an inquiry is sent.
+ */
+
 public class FormActivity extends AppCompatActivity {
 
     public Button cancelButton, sendButton;

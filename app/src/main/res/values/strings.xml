@@ -1,8 +1,5 @@
 <resources>
     <string name="app_name">Otago Virtual ID</string>
-    <string name="button_login">Login</string>
-
-    <string name="ask_help">AskOtago</string>
 
     <string name="facebookText"><a href="https://www.facebook.com/otagouniversity/">Facebook</a></string>
     <string name="linkedInText"><a href="https://www.linkedin.com/school/university-of-otago/">LinkedIn</a></string>

@@ -10,6 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+/**Main Page Class
+ *User is redirected to this page activity once login has been approved
+ *from the "MainAcitivity" class.
+ */
+
 public class MainPage extends AppCompatActivity {
     FirebaseAuth fAuth;
 

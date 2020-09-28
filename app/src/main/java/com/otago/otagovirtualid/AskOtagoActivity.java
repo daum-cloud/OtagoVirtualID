@@ -14,6 +14,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**Ask Otago
+ *Activity to display further information and links for the user to follow
+ *Otago University and for further contact and inquiries.
+ */
+
 public class AskOtagoActivity extends AppCompatActivity{
 
     Button submitForm;

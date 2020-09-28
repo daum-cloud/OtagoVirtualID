@@ -2,6 +2,13 @@ package com.otago.otagovirtualid;
 
 import java.util.ArrayList;
 
+/**Perks Class;
+ *storing temporary values in an array
+ *for temporary demonstration. Actual
+ *real-time data to be implemented via
+ *Firebase.
+ */
+
 public class Perk {
 
     private String pName;
@@ -29,7 +36,7 @@ public class Perk {
             perks.add(new Perk("Discount " + ++lastContactId, i <= numPerks / 2));
         }
 
-        return perks;
+        return perks ;
     }
 
 }
