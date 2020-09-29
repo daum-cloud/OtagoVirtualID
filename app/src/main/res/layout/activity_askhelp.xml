@@ -45,7 +45,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/askOtagoTitle"
+        android:id="@+id/uploadImageBigTitle"
         android:layout_width="180dp"
         android:layout_height="61dp"
         android:text="AskOtago"

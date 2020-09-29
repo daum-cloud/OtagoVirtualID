@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -39,12 +40,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+
         //try catch removing the header banner
         try
         {
             this.getSupportActionBar().hide();
         }
         catch (NullPointerException e){}
+
 
         setContentView(R.layout.activity_login);
 

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -63,6 +64,14 @@ public class idTemplateActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        NfcAdapter nfcAdapter = NfcAdapter.getDefaultAdapter(this);
+        if(nfcAdapter!=null && nfcAdapter.isEnabled()){
+            Toast.makeText(this, "NFC available", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "NFC not turned on", Toast.LENGTH_SHORT).show();
+        }
+
         //try catch removing the header banner
         try
         {
@@ -74,6 +83,8 @@ public class idTemplateActivity extends AppCompatActivity {
 
         //call navigation method
         setupBottomNavigationView();
+
+
 
 
         //Setting the values

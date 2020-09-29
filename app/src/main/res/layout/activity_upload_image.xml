@@ -4,7 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UploadImageActivity">
+    tools:context=".UploadImageActivity"
+    tools:visibility="visible">
+
+    <!--<ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteX="16dp"
+        />-->
+
+    <ImageView
+        android:id="@+id/imgBanner2"
+        android:layout_width="477dp"
+        android:layout_height="154dp"
+        android:background="@drawable/banner"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/cameraBtn"
@@ -24,35 +49,16 @@
         android:id="@+id/titleUploadImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="Upload an Image"
+        android:text="Update Your Student ID Photo"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.129" />
-
-    <ImageView
-        android:id="@+id/selectedImage"
-        android:layout_width="273dp"
-        android:layout_height="339dp"
-
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleUploadImage"
-        app:layout_constraintVertical_bias="0.193"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:layout_constraintVertical_bias="0.071" />
 
     <Button
         android:id="@+id/submitBtn"
@@ -79,15 +85,51 @@
         android:text="Gallery"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.265"
+        app:layout_constraintHorizontal_bias="0.294"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.839" />
+        app:layout_constraintVertical_bias="0.754" />
+
+    <ImageView
+        android:id="@+id/selectedImage"
+        android:layout_width="273dp"
+        android:layout_height="0dp"
+
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="264dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBanner2"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_baseline_camera_alt_24"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/uploadIconImage"
+        android:layout_width="72dp"
+        android:layout_height="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/titleUploadImage"
+        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.053"
+        app:srcCompat="@drawable/uploadimageyellow" />
+
 
     <RelativeLayout
+        android:id="@+id/yello"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <include layout="@layout/layout_bottom_navigation_view"/>
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <include layout="@layout/layout_bottom_navigation_view" />
 
     </RelativeLayout>
 
