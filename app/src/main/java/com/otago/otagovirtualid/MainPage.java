@@ -2,6 +2,7 @@ package com.otago.otagovirtualid;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -22,6 +23,7 @@ import com.otago.otagovirtualid.utils.BottomNavigationHelper;
 public class MainPage extends AppCompatActivity {
     FirebaseAuth fAuth;
     BottomNavigationView bottomNavigationView;
+    private static int ActivityNum = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,10 @@ public class MainPage extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavViewBar);
         //Referencing method in Utils/BottomNavigationHelper which takes the user to the corresponding activity.
         BottomNavigationHelper.enableNavigation(MainPage.this, bottomNavigationView);
+
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(ActivityNum);
+        menuItem.setChecked(true);
     }
 
 

@@ -20,6 +20,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -66,6 +68,7 @@ public class UploadImageActivity extends AppCompatActivity {
     File file;
     public Uri imageUri;
     private StorageReference mstorageRef;
+    private static int ActivityNum = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,6 +130,10 @@ public class UploadImageActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavViewBar);
         //Referencing method in Utils/BottomNavigationHelper which takes the user to the corresponding activity.
         BottomNavigationHelper.enableNavigation(UploadImageActivity.this, bottomNavigationView);
+
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(ActivityNum);
+        menuItem.setChecked(true);
     }
 
     private String getExtension(Uri uri) {

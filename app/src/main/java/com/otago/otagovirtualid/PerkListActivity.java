@@ -2,6 +2,7 @@ package com.otago.otagovirtualid;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -20,6 +21,8 @@ import java.util.ArrayList;
  */
 
 public class PerkListActivity extends AppCompatActivity {
+
+    private static int ActivityNum = 2;
 
     ArrayList<Perk> perks;
 
@@ -64,6 +67,10 @@ public class PerkListActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavViewBar);
         //Referencing method in Utils/BottomNavigationHelper which takes the user to the corresponding activity.
         BottomNavigationHelper.enableNavigation(PerkListActivity.this, bottomNavigationView);
+
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(ActivityNum);
+        menuItem.setChecked(true);
     }
 
 

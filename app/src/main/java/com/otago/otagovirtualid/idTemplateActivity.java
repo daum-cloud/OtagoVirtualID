@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -51,6 +52,8 @@ public class idTemplateActivity extends AppCompatActivity {
     DatabaseReference ref = database.getReference();
     //Set reference to the users section
     DatabaseReference usersref = ref.child("users");
+
+    private static int ActivityNum = 1;
 
     //For QR code:
     Bitmap bitmap;
@@ -135,5 +138,9 @@ public class idTemplateActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavViewBar);
         //Referencing method in Utils/BottomNavigationHelper which takes the user to the corresponding activity.
         BottomNavigationHelper.enableNavigation(idTemplateActivity.this, bottomNavigationView);
+
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(ActivityNum);
+        menuItem.setChecked(true);
     }
 }
