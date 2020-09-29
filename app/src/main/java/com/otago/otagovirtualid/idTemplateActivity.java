@@ -54,6 +54,7 @@ public class idTemplateActivity extends AppCompatActivity {
     //Set reference to the users section
     DatabaseReference usersref = ref.child("users");
 
+    //Number used as a counter which corresponds to an activity (for navigation purposes)
     private static int ActivityNum = 1;
 
     //For QR code:
@@ -150,8 +151,9 @@ public class idTemplateActivity extends AppCompatActivity {
         //Referencing method in Utils/BottomNavigationHelper which takes the user to the corresponding activity.
         BottomNavigationHelper.enableNavigation(idTemplateActivity.this, bottomNavigationView);
 
+        // This ensures that the correct navigation icon is highlighted for each activity.
         Menu menu = bottomNavigationView.getMenu();
-        MenuItem menuItem = menu.getItem(ActivityNum);
+        MenuItem menuItem = menu.getItem(ActivityNum); // using ActivityNum to reference the activity we are referring to
         menuItem.setChecked(true);
     }
 }
