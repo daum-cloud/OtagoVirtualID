@@ -10,7 +10,7 @@
         android:id="@+id/perkTextView"
         android:layout_width="426dp"
         android:layout_height="59dp"
-        android:background="#10385B"
+        android:background="#10428B"
         android:gravity="center"
         android:text="My Perks"
         android:textAllCaps="true"
@@ -20,23 +20,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/perkTextView"
-        app:layout_constraintHorizontal_bias="0.336"
-        app:layout_constraintStart_toStartOf="@+id/perkTextView"
-        app:layout_constraintTop_toTopOf="@+id/perkTextView"
-        app:layout_constraintVertical_bias="0.014"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
 
     <TextView
         android:id="@+id/textView2"
@@ -45,10 +32,10 @@
         android:layout_marginTop="16dp"
         android:capitalize="none"
         android:gravity="center"
+        android:includeFontPadding="false"
         android:text="List of perks associated with your ID"
         android:textColor="#10385B"
         android:textSize="18sp"
-        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.576"
@@ -58,14 +45,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPerks"
-        android:layout_width="367dp"
-        android:layout_height="550dp"
+        android:layout_width="369dp"
+        android:layout_height="666dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.47"
