@@ -29,6 +29,14 @@ public class AskOtagoActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //try catch removing the header banner
+        try
+        {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){}
+
         Intent intent = getIntent();
 
         super.onCreate(savedInstanceState);
