@@ -28,27 +28,27 @@ public class BottomNavigationHelper {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId()){
                     case R.id.navigation_home:
-                        Intent intentHome = new Intent(context, MainPage.class);
+                        Intent intentHome = new Intent(context, MainPage.class); //ActivityNum = 0
                         context.startActivity(intentHome);
                         break;
 
                     case R.id.navigation_id:
-                        Intent intentID = new Intent (context, idTemplateActivity.class);
+                        Intent intentID = new Intent (context, idTemplateActivity.class); //ActivityNum = 1
                         context.startActivity(intentID);
                         break;
 
                     case R.id.navigation_perks:
-                        Intent intentPerks = new Intent(context, PerkListActivity.class);
+                        Intent intentPerks = new Intent(context, PerkListActivity.class); //ActivityNum = 2
                         context.startActivity(intentPerks);
                         break;
 
                     case R.id.navigation_uploadImage:
-                        Intent intentImage = new Intent(context, UploadImageActivity.class);
+                        Intent intentImage = new Intent(context, UploadImageActivity.class); //ActivityNum = 3
                         context.startActivity(intentImage);
                         break;
 
                     case R.id.navigation_help:
-                        Intent intentHelp = new Intent(context, AskOtagoActivity.class);
+                        Intent intentHelp = new Intent(context, AskOtagoActivity.class); //ActivityNum = 4
                         context.startActivity(intentHelp);
                         break;
                 }

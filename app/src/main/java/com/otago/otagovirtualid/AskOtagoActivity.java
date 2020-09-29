@@ -28,6 +28,7 @@ import com.otago.otagovirtualid.utils.BottomNavigationHelper;
 public class AskOtagoActivity extends AppCompatActivity{
 
     Button submitForm;
+    //Number used as a counter which corresponds to an activity (for navigation purposes)
     private static int ActivityNum = 4;
 
     @Override
@@ -87,8 +88,9 @@ public class AskOtagoActivity extends AppCompatActivity{
         //Referencing method in Utils/BottomNavigationHelper which takes the user to the corresponding activity.
         BottomNavigationHelper.enableNavigation(AskOtagoActivity.this, bottomNavigationView);
 
+        // This ensures that the correct navigation icon is highlighted for each activity.
         Menu menu = bottomNavigationView.getMenu();
-        MenuItem menuItem = menu.getItem(ActivityNum);
+        MenuItem menuItem = menu.getItem(ActivityNum); // using ActivityNum to reference the activity we are referring to
         menuItem.setChecked(true);
     }
 
