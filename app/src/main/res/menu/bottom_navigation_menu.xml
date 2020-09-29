@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_baseline_house_24"
+        android:title="Home"/>
+
+    <item android:id="@+id/navigation_id"
+        android:icon="@drawable/ic_baseline_account_box_24"
+        android:title="ID"/>
+
+    <item android:id="@+id/navigation_perks"
+        android:icon="@drawable/ic_baseline_card_giftcard_24"
+        android:title="Perks"/>
+
+    <item android:id="@+id/navigation_uploadImage"
+        android:icon="@drawable/ic_baseline_camera_alt_24"
+        android:title="Upload Image"/>
+
+    <item android:id="@+id/navigation_help"
+        android:icon="@drawable/ic_baseline_help_24"
+        android:title="AskOtago"/>
+
+</menu>

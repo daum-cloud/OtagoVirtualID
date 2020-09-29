@@ -29,6 +29,7 @@ import android.widget.Toast;
 import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -36,6 +37,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.otago.otagovirtualid.utils.BottomNavigationHelper;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -69,6 +71,8 @@ public class UploadImageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_image);
+
+        setupBottomNavigationView();
 
         selectedImg = findViewById(R.id.selectedImage);
         galleryBtn = findViewById(R.id.galleryBtn);
@@ -105,6 +109,13 @@ public class UploadImageActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void setupBottomNavigationView(){
+
+        //Navigation instance
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavViewBar);
+        BottomNavigationHelper.enableNavigation(UploadImageActivity.this, bottomNavigationView);
     }
 
     private String getExtension(Uri uri) {

@@ -2,13 +2,17 @@ package com.otago.otagovirtualid;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.otago.otagovirtualid.utils.BottomNavigationHelper;
 
 /**Main Page Class
  *User is redirected to this page activity once login has been approved
@@ -17,12 +21,26 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainPage extends AppCompatActivity {
     FirebaseAuth fAuth;
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        setupBottomNavigationView();
+
     }
+
+    //Set up bottom navigation
+    public void setupBottomNavigationView(){
+
+        //Navigation instance
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavViewBar);
+        //BottomNavigationHelper.setupBottomNavigationView(bottomNavigationView);
+        BottomNavigationHelper.enableNavigation(MainPage.this, bottomNavigationView);
+    }
+
 
     //Called when user clicks askOtago
     public void askOtago(View view) {
@@ -51,7 +69,6 @@ public class MainPage extends AppCompatActivity {
         startActivity(intent);
     }
 
-
     //Called when user clicks Upload Image
     public void uploadImage(View view) {
         // Do something in response to button
@@ -62,5 +79,6 @@ public class MainPage extends AppCompatActivity {
     @Override
     public void onBackPressed() {
     }
+
 
 }
