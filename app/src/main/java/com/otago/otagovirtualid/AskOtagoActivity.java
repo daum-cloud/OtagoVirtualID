@@ -42,6 +42,7 @@ public class AskOtagoActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_askhelp);
 
+        //Calling method
         setupBottomNavigationView();
 
         submitForm = findViewById(R.id.submitForm);
@@ -74,10 +75,13 @@ public class AskOtagoActivity extends AppCompatActivity{
 
     }
 
+    /** Setting up bottom navigation in Ask Otago
+     */
     public void setupBottomNavigationView(){
 
         //Navigation instance
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavViewBar);
+        //Referencing method in Utils/BottomNavigationHelper which takes the user to the corresponding activity.
         BottomNavigationHelper.enableNavigation(AskOtagoActivity.this, bottomNavigationView);
     }
 

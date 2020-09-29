@@ -36,16 +36,18 @@ public class MainPage extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+        //Calling method
         setupBottomNavigationView();
 
     }
 
-    //Set up bottom navigation
+    /** Setting up bottom navigation in Main page
+     */
     public void setupBottomNavigationView(){
 
-        //Navigation instance
+        //Instance of bottom navigation view
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavViewBar);
-        //BottomNavigationHelper.setupBottomNavigationView(bottomNavigationView);
+        //Referencing method in Utils/BottomNavigationHelper which takes the user to the corresponding activity.
         BottomNavigationHelper.enableNavigation(MainPage.this, bottomNavigationView);
     }
 

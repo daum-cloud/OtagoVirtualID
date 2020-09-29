@@ -37,6 +37,7 @@ public class PerkListActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_student_perks);
 
+        //Calling navigation method
         setupBottomNavigationView();
 
         // Lookup the recyclerview in activity layout
@@ -55,10 +56,13 @@ public class PerkListActivity extends AppCompatActivity {
 
     }
 
+    /** Setting up bottom navigation in Perks
+     */
     public void setupBottomNavigationView(){
 
         //Navigation instance
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavViewBar);
+        //Referencing method in Utils/BottomNavigationHelper which takes the user to the corresponding activity.
         BottomNavigationHelper.enableNavigation(PerkListActivity.this, bottomNavigationView);
     }
 

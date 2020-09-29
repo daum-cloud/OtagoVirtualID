@@ -126,11 +126,14 @@ public class idTemplateActivity extends AppCompatActivity {
 
     }
 
+
+    /** Setting up bottom navigation in ID Template
+     */
     public void setupBottomNavigationView(){
 
         //Navigation instance
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavViewBar);
-        //calling navigation method from class BottomNavigationHelper.
+        //Referencing method in Utils/BottomNavigationHelper which takes the user to the corresponding activity.
         BottomNavigationHelper.enableNavigation(idTemplateActivity.this, bottomNavigationView);
     }
 }

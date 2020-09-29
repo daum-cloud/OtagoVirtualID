@@ -79,6 +79,7 @@ public class UploadImageActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_upload_image);
 
+        //Calling navigation method
         setupBottomNavigationView();
 
         selectedImg = findViewById(R.id.selectedImage);
@@ -118,10 +119,13 @@ public class UploadImageActivity extends AppCompatActivity {
 
     }
 
+    /** Setting up bottom navigation in Upload Image
+     */
     public void setupBottomNavigationView(){
 
         //Navigation instance
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavViewBar);
+        //Referencing method in Utils/BottomNavigationHelper which takes the user to the corresponding activity.
         BottomNavigationHelper.enableNavigation(UploadImageActivity.this, bottomNavigationView);
     }
 
