@@ -3,10 +3,12 @@ package com.otago.otagovirtualid;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,6 +16,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -24,6 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.zxing.WriterException;
+import com.otago.otagovirtualid.utils.BottomNavigationHelper;
 import com.squareup.picasso.Picasso;
 
 import java.text.DateFormat;
@@ -53,11 +57,14 @@ public class idTemplateActivity extends AppCompatActivity {
     QRGEncoder qrgEncoder;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_id_template);
+
+        //call navigation method
+        setupBottomNavigationView();
+
 
         //Setting the values
         final TextView txtUsername = findViewById(R.id.txtUsername);
@@ -110,5 +117,13 @@ public class idTemplateActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public void setupBottomNavigationView(){
+
+        //Navigation instance
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavViewBar);
+        //calling navigation method from class BottomNavigationHelper.
+        BottomNavigationHelper.enableNavigation(idTemplateActivity.this, bottomNavigationView);
     }
 }

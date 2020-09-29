@@ -14,10 +14,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.otago.otagovirtualid.utils.BottomNavigationHelper;
+
 /**Ask Otago
  *Activity to display further information and links for the user to follow
  *Otago University and for further contact and inquiries.
  */
+
 
 public class AskOtagoActivity extends AppCompatActivity{
 
@@ -29,6 +33,8 @@ public class AskOtagoActivity extends AppCompatActivity{
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_askhelp);
+
+        setupBottomNavigationView();
 
         submitForm = findViewById(R.id.submitForm);
 
@@ -58,7 +64,15 @@ public class AskOtagoActivity extends AppCompatActivity{
         });
 
 
-
-
     }
+
+    public void setupBottomNavigationView(){
+
+        //Navigation instance
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavViewBar);
+        BottomNavigationHelper.enableNavigation(AskOtagoActivity.this, bottomNavigationView);
+    }
+
+
+
 }
