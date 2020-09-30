@@ -5,6 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/imgBanner5"
+        android:layout_width="477dp"
+        android:layout_height="154dp"
+        android:background="@drawable/banner"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
     <Button
         android:id="@+id/submitForm"
         android:layout_width="443dp"
@@ -17,46 +29,59 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.439" />
+        app:layout_constraintVertical_bias="0.425" />
 
     <TextView
         android:id="@+id/details"
-        android:layout_width="212dp"
-        android:layout_height="75dp"
+        android:layout_width="258dp"
+        android:layout_height="70dp"
+        android:shadowColor="#535353"
+        android:shadowRadius="1"
         android:text="Freephone: 0800 80 80 98\nTel: +64 3 479 7000\nEmail: university@otago.ac.nz "
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.158"
+        app:layout_constraintHorizontal_bias="0.183"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.287" />
+        app:layout_constraintVertical_bias="0.265" />
 
     <TextView
         android:id="@+id/contact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_width="126dp"
+        android:layout_height="39dp"
+        android:gravity="center"
+        android:shadowColor="#535353"
+        android:shadowRadius="10"
         android:text="Contact Us"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/imgBanner5"
+        app:layout_constraintVertical_bias="0.146" />
 
     <TextView
         android:id="@+id/uploadImageBigTitle"
-        android:layout_width="180dp"
-        android:layout_height="61dp"
+        android:layout_width="179dp"
+        android:layout_height="51dp"
+        android:gravity="center"
         android:text="AskOtago"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="#FFFFFF"
+        android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.167" />
+        app:layout_constraintVertical_bias="0.053" />
 
     <ImageView
         android:id="@+id/paperPlane"
@@ -70,18 +95,18 @@
         app:layout_constraintTop_toTopOf="@+id/submitForm"
         app:srcCompat="@drawable/paperplaceyellow" />
 
+
     <ImageView
         android:id="@+id/personIcon"
         android:layout_width="62dp"
         android:layout_height="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintHorizontal_bias="0.085"
         app:layout_constraintStart_toStartOf="@+id/submitForm"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.063"
+        app:layout_constraintVertical_bias="0.044"
         app:srcCompat="@drawable/personyellow" />
-
 
     <LinearLayout
         android:id="@+id/icons"

@@ -48,7 +48,7 @@ public class PerkListActivity extends AppCompatActivity {
         RecyclerView rvContacts = (RecyclerView) findViewById(R.id.rvPerks);
 
         // Initialize contacts
-        perks = Perk.createPerkList(20);
+        perks = Perk.createPerkList(10);
         // Create adapter passing in the sample user data
         StudentPerksAdapter adapter = new StudentPerksAdapter(perks);
         // Attach the adapter to the recyclerview to populate items

@@ -6,47 +6,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/perkTextView"
-        android:layout_width="426dp"
-        android:layout_height="59dp"
-        android:background="#10428B"
-        android:gravity="center"
-        android:text="My Perks"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
+    <ImageView
+        android:id="@+id/imgBanner3"
+        android:layout_width="477dp"
+        android:layout_height="154dp"
+        android:background="@drawable/banner"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="295dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="305dp"
+        android:layout_height="34dp"
         android:capitalize="none"
         android:gravity="center"
         android:includeFontPadding="false"
+        android:shadowColor="#535353"
+        android:shadowRadius="10"
         android:text="List of perks associated with your ID"
-        android:textColor="#10385B"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/perkTextView"
-        app:layout_constraintVertical_bias="0.086" />
+        app:layout_constraintTop_toTopOf="@+id/imgBanner3"
+        app:layout_constraintVertical_bias="0.150" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPerks"
-        android:layout_width="369dp"
-        android:layout_height="666dp"
+        android:layout_width="374dp"
+        android:layout_height="631dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
@@ -59,10 +52,39 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:layout_constraintVertical_bias="0.0" />
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="102dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Perks"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgBanner3"
+        app:layout_constraintVertical_bias="0.397" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="78dp"
+        android:layout_height="67dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imgBanner3"
+        app:layout_constraintVertical_bias="0.522"
+        app:srcCompat="@drawable/tag_icon" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteX="-32dp"
         tools:layout_editor_absoluteY="0dp">
 
         <include layout="@layout/layout_bottom_navigation_view" />

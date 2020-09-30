@@ -33,7 +33,7 @@ public class Perk {
         ArrayList<Perk> perks = new ArrayList<Perk>();
 
         for (int i = 1; i <= numPerks; i++) {
-            perks.add(new Perk("Discount " + ++lastContactId, i <= numPerks / 2));
+            perks.add(new Perk("*Name of retailer* " + ++lastContactId + "\n" + "*Type of discount... *", i <= numPerks / 2));
         }
 
         return perks ;
