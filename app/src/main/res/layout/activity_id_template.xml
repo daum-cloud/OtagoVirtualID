@@ -9,9 +9,13 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="380dp"
-        android:layout_height="1dp"
-        android:background="#CDCDCD"
+        android:layout_width="330dp"
+        android:layout_height="1.5dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="#00508F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
@@ -21,9 +25,13 @@
 
     <View
         android:id="@+id/view2"
-        android:layout_width="380dp"
-        android:layout_height="1dp"
-        android:background="#CDCDCD"
+        android:layout_width="330dp"
+        android:layout_height="1.5dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="#00508F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
@@ -34,8 +42,8 @@
 
     <ImageView
         android:id="@+id/imgBanner"
-        android:layout_width="416dp"
-        android:layout_height="333dp"
+        android:layout_width="477dp"
+        android:layout_height="154dp"
         android:layout_marginBottom="404dp"
         android:background="@drawable/banner"
         android:scaleType="centerCrop"
@@ -63,7 +71,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtStudent"
         app:layout_constraintVertical_bias="0.029"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@tools:sample/avatars"
+       />
 
     <TextView
         android:id="@+id/txtName"
@@ -74,11 +83,12 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="228dp"
+        android:fontFamily="sans-serif"
         android:gravity="center"
-        android:shadowColor="#535353"
+        android:shadowColor="#FFFFFF"
         android:shadowRadius="10"
         android:text="Name"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -86,7 +96,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgID"
-        app:layout_constraintVertical_bias="0.066" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtStudent"
@@ -101,7 +111,7 @@
         android:gravity="center"
         android:text="Student ID"
         android:textColor="#FFFFFF"
-        android:textSize="36sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -129,26 +139,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.678" />
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:fontFamily="sans-serif-black"
         android:text="Email"
         android:textColor="#00508F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.647" />
 
-
     <View
         android:id="@+id/view4"
-        android:layout_width="380dp"
-        android:layout_height="1dp"
-        android:background="#CDCDCD"
+        android:layout_width="330dp"
+        android:layout_height="1.5dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="#00508F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
@@ -164,6 +182,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:fontFamily="sans-serif-black"
         android:text="ID Number"
         android:textColor="#00508F"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -216,8 +235,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="328dp"
-        android:layout_marginRight="328dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:fontFamily="sans-serif-black"
         android:text="Username"
         android:textColor="#00508F"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -226,6 +246,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.558" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Date Issued"
+        android:textColor="#00508F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.762" />
 
     <TextView
         android:id="@+id/txtDate"
@@ -243,19 +280,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.867" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Date Issued"
-        android:textColor="#00508F"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.047"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.834" />
+        app:layout_constraintVertical_bias="0.793" />
 
     <ImageView
         android:id="@+id/qr"
@@ -276,15 +301,19 @@
 
 
 
-      <RelativeLayout
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          tools:layout_editor_absoluteX="0dp"
-          tools:layout_editor_absoluteY="3dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-          <include layout="@layout/layout_bottom_navigation_view" />
+        <include layout="@layout/layout_bottom_navigation_view" />
 
-      </RelativeLayout>
+
+    </RelativeLayout>
+
 
 
 
