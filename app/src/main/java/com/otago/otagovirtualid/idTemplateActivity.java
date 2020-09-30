@@ -55,7 +55,7 @@ public class idTemplateActivity extends AppCompatActivity {
     DatabaseReference usersref = ref.child("users");
 
     //Number used as a counter which corresponds to an activity (for navigation purposes)
-    private static int ActivityNum = 1;
+    private static int ActivityNum = 0;
 
     //For QR code:
     Bitmap bitmap;

@@ -16,10 +16,18 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.otago.otagovirtualid.utils.BottomNavigationHelper;
 
-/**Main Page Class
+/**NOTICE: THIS CLASS IS NOW OBSOLETE. IT HAS NO USAGE.
+ *However it is kept in, in case of changes and referces
+ *
+ *
+ *
+ *
+ *
+ *
+ * Main Page Class
  *User is redirected to this page activity once login has been approved
  *from the "MainAcitivity" class.
- */
+
 
 public class MainPage extends AppCompatActivity {
     FirebaseAuth fAuth;
@@ -49,7 +57,7 @@ public class MainPage extends AppCompatActivity {
     }
 
     /** Setting up bottom navigation in Main page
-     */
+
     public void setupBottomNavigationView(){
 
         //Instance of bottom navigation view
@@ -104,3 +112,5 @@ public class MainPage extends AppCompatActivity {
 
 
 }
+
+*/

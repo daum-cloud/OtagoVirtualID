@@ -69,7 +69,7 @@ public class UploadImageActivity extends AppCompatActivity {
     public Uri imageUri;
     private StorageReference mstorageRef;
     //Number used as a counter which corresponds to an activity (for navigation purposes)
-    private static int ActivityNum = 3;
+    private static int ActivityNum = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

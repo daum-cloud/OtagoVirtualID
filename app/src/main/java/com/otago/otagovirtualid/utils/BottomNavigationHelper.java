@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.otago.otagovirtualid.AskOtagoActivity;
 import com.otago.otagovirtualid.MainActivity;
-import com.otago.otagovirtualid.MainPage;
+//import com.otago.otagovirtualid.MainPage;
 import com.otago.otagovirtualid.PerkListActivity;
 import com.otago.otagovirtualid.R;
 import com.otago.otagovirtualid.UploadImageActivity;
@@ -27,10 +27,10 @@ public class BottomNavigationHelper {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch(item.getItemId()){
-                    case R.id.navigation_home:
-                        Intent intentHome = new Intent(context, MainPage.class); //ActivityNum = 0
-                        context.startActivity(intentHome);
-                        break;
+                    //case R.id.navigation_home:
+                        //Intent intentHome = new Intent(context, MainPage.class); //ActivityNum = 0
+                        //context.startActivity(intentHome);
+                        //break;
 
                     case R.id.navigation_id:
                         Intent intentID = new Intent (context, idTemplateActivity.class); //ActivityNum = 1

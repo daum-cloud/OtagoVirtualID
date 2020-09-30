@@ -29,7 +29,7 @@ public class AskOtagoActivity extends AppCompatActivity{
 
     Button submitForm;
     //Number used as a counter which corresponds to an activity (for navigation purposes)
-    private static int ActivityNum = 4;
+    private static int ActivityNum = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

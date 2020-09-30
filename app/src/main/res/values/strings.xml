@@ -7,4 +7,9 @@
     <string name="instagramText"><a href="https://www.instagram.com/universityofotago/?hl=en">Instagram</a></string>
     <string name="ytText"><a href="https://www.youtube.com/channel/UCPVjZXotZ5oX9jyXlFFRj2w">Youtube</a></string>
 
+    <string name="id_home">Your ID</string>
+    <string name="perks">Perks</string>
+    <string name="new_photo">Upload\nImage</string>
+    <string name="help">AskOtago</string>
+
 </resources>

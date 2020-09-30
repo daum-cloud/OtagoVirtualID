@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class PerkListActivity extends AppCompatActivity {
 
     //Number used as a counter which corresponds to an activity (for navigation purposes)
-    private static int ActivityNum = 2;
+    private static int ActivityNum = 1;
 
     ArrayList<Perk> perks;
 
