@@ -8,8 +8,6 @@ import androidx.annotation.NonNull;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.otago.otagovirtualid.AskOtagoActivity;
-import com.otago.otagovirtualid.MainActivity;
-//import com.otago.otagovirtualid.MainPage;
 import com.otago.otagovirtualid.PerkListActivity;
 import com.otago.otagovirtualid.R;
 import com.otago.otagovirtualid.UploadImageActivity;

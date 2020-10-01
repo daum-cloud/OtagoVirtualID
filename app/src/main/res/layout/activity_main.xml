@@ -23,6 +23,11 @@
     android:layout_height="match_parent">
     <include layout="@layout/layout_bottom_navigation_view"/>
 
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="396dp"
+        android:layout_height="342dp" />
+
 </RelativeLayout>
 
 

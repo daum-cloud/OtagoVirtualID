@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.otago.otagovirtualid.utils.BottomNavigationHelper;
 
 /**NOTICE: THIS CLASS IS NOW OBSOLETE. IT HAS NO USAGE.
- *However it is kept in, in case of changes and referces
+ *However it is kept in case of changes and references
  *
  *
  *

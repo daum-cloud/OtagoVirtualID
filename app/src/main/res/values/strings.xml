@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Otago Virtual ID</string>
 
+    <string name="idActivity">Student ID</string>
+    <string name="idTemplateName">Belcalis Marlenis Almánzar</string>
+    <string name="perksActivity">Perks</string>
+    <string name="newPhoto">ID Photo</string>
+    <string name="askHelp">AskOtago</string>
+
     <string name="facebookText"><a href="https://www.facebook.com/otagouniversity/">Facebook</a></string>
     <string name="linkedInText"><a href="https://www.linkedin.com/school/university-of-otago/">LinkedIn</a></string>
     <string name="twitterText"><a href="https://twitter.com/otago?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter</a></string>
@@ -9,7 +15,8 @@
 
     <string name="id_home">Your ID</string>
     <string name="perks">Perks</string>
-    <string name="new_photo">Upload\nImage</string>
+    <string name="new_photo">Upload Image</string>
     <string name="help">AskOtago</string>
+    <string name="submit_form">Submit a Form</string>
 
 </resources>

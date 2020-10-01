@@ -10,6 +10,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/bottomNavViewBar"
+            app:theme="@style/navbarColor"
             app:menu="@menu/bottom_navigation_menu"
             app:itemIconTint="@drawable/item_selected"
             app:itemTextColor="@drawable/item_selected">

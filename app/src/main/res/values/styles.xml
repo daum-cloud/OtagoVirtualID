@@ -7,4 +7,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="navbarColor" parent="AppTheme">
+        <item name="android:textColorSecondary">#ee312f</item>
+    </style>
+
 </resources>
