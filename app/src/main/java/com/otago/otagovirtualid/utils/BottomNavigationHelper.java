@@ -33,22 +33,22 @@ public class BottomNavigationHelper {
                         //break;
 
                     case R.id.navigation_id:
-                        Intent intentID = new Intent (context, idTemplateActivity.class); //ActivityNum = 1
+                        Intent intentID = new Intent (context, idTemplateActivity.class); //ActivityNum = 0
                         context.startActivity(intentID);
                         break;
 
                     case R.id.navigation_perks:
-                        Intent intentPerks = new Intent(context, PerkListActivity.class); //ActivityNum = 2
+                        Intent intentPerks = new Intent(context, PerkListActivity.class); //ActivityNum = 1
                         context.startActivity(intentPerks);
                         break;
 
                     case R.id.navigation_uploadImage:
-                        Intent intentImage = new Intent(context, UploadImageActivity.class); //ActivityNum = 3
+                        Intent intentImage = new Intent(context, UploadImageActivity.class); //ActivityNum = 2
                         context.startActivity(intentImage);
                         break;
 
                     case R.id.navigation_help:
-                        Intent intentHelp = new Intent(context, AskOtagoActivity.class); //ActivityNum = 4
+                        Intent intentHelp = new Intent(context, AskOtagoActivity.class); //ActivityNum = 3
                         context.startActivity(intentHelp);
                         break;
                 }
