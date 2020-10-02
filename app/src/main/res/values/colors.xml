@@ -3,4 +3,6 @@
     <color name="colorPrimary">#00508F</color>
     <color name="colorPrimaryDark">#00508F</color>
     <color name="colorAccent">#00508F</color>
+    <color name="otagoRed">#ee312f</color>
+    <color name="otagoBlue">#10418b</color>
 </resources>

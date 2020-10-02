@@ -94,6 +94,7 @@ public class AskOtagoActivity extends AppCompatActivity{
         menuItem.setChecked(true);
     }
 
-
-
+    @Override
+    public void onBackPressed() {
+    }
 }

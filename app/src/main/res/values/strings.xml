@@ -1,6 +1,22 @@
 <resources>
     <string name="app_name">Otago Virtual ID</string>
 
+    <string name="hintUsername">Username</string>
+    <string name="hintPassword">Password</string>
+    <string name="name">com.otago.otagovirtualid.name</string>
+    <string name="password">com.otago.otagovirtualid.password</string>
+
+    <string name="id_home">Your ID</string>
+    <string name="perks">Perks</string>
+    <string name="new_photo">Upload Image</string>
+    <string name="help">AskOtago</string>
+    <string name="submit_form">Submit a Form</string>
+
+    <string name="idNumber">#######</string>
+    <string name="userName">--------</string>
+    <string name="email">*username*@student.otago.ac.nz</string>
+    <string name="dateIssued">DD/MM/YYYY</string>
+
     <string name="idActivity">Student ID</string>
     <string name="idTemplateName">---- ----</string>
     <string name="perksActivity">Perks</string>
@@ -12,11 +28,5 @@
     <string name="twitterText"><a href="https://twitter.com/otago?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter</a></string>
     <string name="instagramText"><a href="https://www.instagram.com/universityofotago/?hl=en">Instagram</a></string>
     <string name="ytText"><a href="https://www.youtube.com/channel/UCPVjZXotZ5oX9jyXlFFRj2w">Youtube</a></string>
-
-    <string name="id_home">Your ID</string>
-    <string name="perks">Perks</string>
-    <string name="new_photo">Upload Image</string>
-    <string name="help">AskOtago</string>
-    <string name="submit_form">Submit a Form</string>
 
 </resources>

@@ -75,5 +75,8 @@ public class PerkListActivity extends AppCompatActivity {
         menuItem.setChecked(true);
     }
 
+    @Override
+    public void onBackPressed() {
+    }
 
 }

@@ -4,10 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -30,15 +33,20 @@ import com.google.firebase.auth.FirebaseUser;
  */
 
 public class MainActivity extends AppCompatActivity {
-
     EditText mUsername, mPassword;
     Button mLoginBtn;
     FirebaseAuth fAuth;
     TextView mForgetPW;
+    private SharedPreferences mPreferences;
+    private SharedPreferences.Editor mEditor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mPreferences = getSharedPreferences("com.otago.otagovirtualid", Context.MODE_PRIVATE);
+        mEditor = mPreferences.edit();
 
 
 
@@ -48,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
             this.getSupportActionBar().hide();
         }
         catch (NullPointerException e){}
-
 
         setContentView(R.layout.activity_login);
 
@@ -61,11 +68,19 @@ public class MainActivity extends AppCompatActivity {
         mLoginBtn = findViewById(R.id.btnLogin);
         mForgetPW = findViewById(R.id.txtForgotPW);
 
+        checkSharedPreferences();
+
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String username = mUsername.getText().toString();
+                mEditor.putString(getString(R.string.name), username);
+                mEditor.commit();
+
                 String password = mPassword.getText().toString();
+                mEditor.putString(getString(R.string.password), password);
+                mEditor.commit();
 
                 // data validation
 
@@ -146,6 +161,14 @@ public class MainActivity extends AppCompatActivity {
                 passwordResetDialog.create().show();
             }
         });
+    }
+
+    private void checkSharedPreferences(){
+        String name = mPreferences.getString(getString(R.string.name), "");
+        String password = mPreferences.getString(getString(R.string.password), "");
+
+        mUsername.setText(name);
+        mPassword.setText(password);
     }
 
 }

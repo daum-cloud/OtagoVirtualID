@@ -86,8 +86,6 @@ public class idTemplateActivity extends AppCompatActivity {
         setupBottomNavigationView();
 
 
-
-
         //Setting the values
         final TextView txtUsername = findViewById(R.id.txtUsername);
         final TextView txtEmail = findViewById(R.id.txtEmail);
@@ -156,4 +154,9 @@ public class idTemplateActivity extends AppCompatActivity {
         MenuItem menuItem = menu.getItem(ActivityNum); // using ActivityNum to reference the activity we are referring to
         menuItem.setChecked(true);
     }
+
+    @Override
+    public void onBackPressed() {
+    }
+
 }
