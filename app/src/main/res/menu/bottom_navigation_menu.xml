@@ -5,6 +5,8 @@
         android:icon="@drawable/ic_baseline_house_24"
         android:title="Home"/>-->
 
+
+    <!-- Four navigation icons, corresponding to four activities. Vectors from Android Studio.-->
     <item
         android:id="@+id/navigation_id"
         android:icon="@drawable/ic_baseline_account_box_24"
