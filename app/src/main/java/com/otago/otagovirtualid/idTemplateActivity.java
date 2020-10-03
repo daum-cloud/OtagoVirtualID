@@ -1,12 +1,16 @@
 package com.otago.otagovirtualid;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.nfc.NfcAdapter;
+import android.nfc.cardemulation.HostApduService;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -46,13 +50,14 @@ import androidmads.library.qrgenearator.QRGEncoder;
  */
 
 public class idTemplateActivity extends AppCompatActivity {
-
+    private NfcAdapter nfcAdapter;
     //Get a Realtime Database
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     //Get the instance
     DatabaseReference ref = database.getReference();
     //Set reference to the users section
     DatabaseReference usersref = ref.child("users");
+    int PENDING_REQUEST_CODE = 0;
 
     //Number used as a counter which corresponds to an activity (for navigation purposes)
     private static int ActivityNum = 0;
@@ -65,13 +70,20 @@ public class idTemplateActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        NfcAdapter nfcAdapter = NfcAdapter.getDefaultAdapter(this);
-        if(nfcAdapter!=null && nfcAdapter.isEnabled()){
-            Toast.makeText(this, "NFC available", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "NFC not turned on", Toast.LENGTH_SHORT).show();
+        nfcAdapter = NfcAdapter.getDefaultAdapter(this);
+        /**
+         * NFC functionality that has not been implemented fully due to time constraints. Will be
+         * added later as a feature post deployment during the maintenance phase.
+         */
+        Boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                .getBoolean("isFirstRun", true);
+        if (isFirstRun) {
+            if(nfcAdapter==null && !nfcAdapter.isEnabled()){
+                Toast.makeText(this, "NFC not turned on", Toast.LENGTH_SHORT).show();
+            }
         }
+        getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+                .putBoolean("isFirstRun", false).commit();
 
         //try catch removing the header banner
         try
@@ -138,6 +150,8 @@ public class idTemplateActivity extends AppCompatActivity {
 
 
     }
+
+
 
 
     /** Setting up bottom navigation in ID Template
