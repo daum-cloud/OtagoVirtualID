@@ -15,6 +15,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,6 +53,7 @@ import androidmads.library.qrgenearator.QRGEncoder;
 
 public class idTemplateActivity extends AppCompatActivity {
     private NfcAdapter nfcAdapter;
+    private ImageButton logout;
     //Get a Realtime Database
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     //Get the instance
@@ -107,13 +110,21 @@ public class idTemplateActivity extends AppCompatActivity {
         final TextView txtDate = findViewById(R.id.txtDate);
         final ImageView imageIDPhoto = findViewById(R.id.imgID);
         final ImageView qrCode = findViewById(R.id.qr);
+        logout = (ImageButton)findViewById(R.id.logoutBtn);
 
         //Get current logged in user from the database:
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         //Get the child user for our specific user
         DatabaseReference userref = usersref.child(currentFirebaseUser.getUid());
 
-
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(idTemplateActivity.this, MainActivity.class));
+                finish();
+            }
+        });
         userref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
