@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(), idTemplateActivity.class)); //if login is successful it will take user to main activity
 
                         } else {
-                            Toast.makeText(MainActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Error ! Please use your E-Vision Credentials to Login", Toast.LENGTH_SHORT).show();
 
 
                         }
