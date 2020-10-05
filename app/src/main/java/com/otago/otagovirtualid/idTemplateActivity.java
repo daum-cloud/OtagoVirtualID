@@ -122,6 +122,7 @@ public class idTemplateActivity extends AppCompatActivity {
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(idTemplateActivity.this, MainActivity.class));
+                Toast.makeText(idTemplateActivity.this, "You have logged out", Toast.LENGTH_LONG).show();
                 finish();
             }
         });

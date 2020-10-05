@@ -43,13 +43,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        mPreferences = getSharedPreferences("com.otago.otagovirtualid", Context.MODE_PRIVATE);
-        mEditor = mPreferences.edit();
-
-
-
         //try catch removing the header banner
         try
         {
@@ -59,6 +52,14 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_login);
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mPreferences = getSharedPreferences("com.otago.otagovirtualid", Context.MODE_PRIVATE);
+        mEditor = mPreferences.edit();
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
 
