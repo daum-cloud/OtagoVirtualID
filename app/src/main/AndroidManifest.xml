@@ -27,18 +27,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <activity
+            android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!---->
 
         <activity
             android:name=".UploadImageActivity"
-            android:label="MyID"
-            android:parentActivityName=".MainPage">
-
+            android:label="MyID">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".AskOtagoActivity" />
         </activity>
 
+        <!---->
 
         <activity
             android:name=".FormActivity"
@@ -53,19 +61,19 @@
         <activity android:name=".idTemplateActivity">
         </activity>
 
-
+        <!---->
 
         <activity
             android:name=".AskOtagoActivity"
-            android:parentActivityName=".MainPage"
             android:label="AskOtago">
 
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainPage" />
+                android:value=".MainActivity" />
         </activity>
 
+        <!---->
 
         <activity
             android:name=".PerkListActivity"
@@ -74,25 +82,10 @@
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainPage" />
+                android:value=".MainActivity" />
         </activity>
 
-
-        <activity
-            android:name=".MainPage"
-            android:label="Home">
-
-        </activity>
-
-
-
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
+        <!---->
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -103,7 +96,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths"/>
         </provider>
-
 
     </application>
 

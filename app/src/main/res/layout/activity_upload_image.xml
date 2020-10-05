@@ -104,8 +104,8 @@
 
     <ImageView
         android:id="@+id/selectedImage"
-        android:layout_width="160dp"
-        android:layout_height="230dp"
+        android:layout_width="176dp"
+        android:layout_height="223dp"
 
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -115,10 +115,10 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
+        app:layout_constraintHorizontal_bias="0.036"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgBanner2"
-        app:layout_constraintVertical_bias="0.036"
+        app:layout_constraintVertical_bias="0.12"
         app:srcCompat="@drawable/profileiconnew"
         tools:visibility="visible" />
 

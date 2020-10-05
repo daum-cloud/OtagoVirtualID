@@ -76,7 +76,6 @@ public class AskOtagoActivity extends AppCompatActivity{
             }
         });
 
-
     }
 
     /** Setting up bottom navigation in Ask Otago
@@ -97,4 +96,5 @@ public class AskOtagoActivity extends AppCompatActivity{
     @Override
     public void onBackPressed() {
     }
+
 }

@@ -5,7 +5,10 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.nfc.NfcAdapter;
@@ -116,16 +119,6 @@ public class idTemplateActivity extends AppCompatActivity {
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         //Get the child user for our specific user
         DatabaseReference userref = usersref.child(currentFirebaseUser.getUid());
-
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(idTemplateActivity.this, MainActivity.class));
-                Toast.makeText(idTemplateActivity.this, "You have logged out", Toast.LENGTH_LONG).show();
-                finish();
-            }
-        });
         userref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -160,11 +153,22 @@ public class idTemplateActivity extends AppCompatActivity {
             }
         });
 
-
+        //calls the logout method
+        logOut();
     }
 
-
-
+    public void logOut(){
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent loginScreen = new Intent(idTemplateActivity.this, MainActivity.class);
+                (idTemplateActivity.this).finish();
+                loginScreen.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NO_HISTORY);
+                startActivity(loginScreen);
+            }
+        });
+    }
 
     /** Setting up bottom navigation in ID Template
      */

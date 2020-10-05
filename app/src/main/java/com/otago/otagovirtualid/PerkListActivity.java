@@ -45,19 +45,17 @@ public class PerkListActivity extends AppCompatActivity {
         setupBottomNavigationView();
 
         // Lookup the recyclerview in activity layout
-        RecyclerView rvContacts = (RecyclerView) findViewById(R.id.rvPerks);
+        RecyclerView rvPerks = (RecyclerView) findViewById(R.id.rvPerks);
 
         // Initialize contacts
         perks = Perk.createPerkList(10);
         // Create adapter passing in the sample user data
         StudentPerksAdapter adapter = new StudentPerksAdapter(perks);
         // Attach the adapter to the recyclerview to populate items
-        rvContacts.setAdapter(adapter);
+        rvPerks.setAdapter(adapter);
         // Set layout manager to position the items
-        rvContacts.setLayoutManager(new LinearLayoutManager(this));
+        rvPerks.setLayoutManager(new LinearLayoutManager(this));
         // That's all!
-
-
     }
 
     /** Setting up bottom navigation in Perks

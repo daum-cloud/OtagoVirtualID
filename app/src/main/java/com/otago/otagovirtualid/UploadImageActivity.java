@@ -217,9 +217,8 @@ public class UploadImageActivity extends AppCompatActivity {
         if (requestCode == CAMERA_REQUEST_CODE && resultCode == RESULT_OK) {
             file = new File(currentPhotoPath);
             selectedImg.setImageURI(Uri.fromFile(file));
-            selectedImg.setRotation(90);
+            selectedImg.setRotation(0);
             imageUri = Uri.fromFile(file);
-
             submitBtn.setVisibility(View.VISIBLE);
         }
         if (requestCode == GALLERY_REQUEST_CODE && resultCode == RESULT_OK) {
@@ -275,4 +274,5 @@ public class UploadImageActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
     }
+
 }
