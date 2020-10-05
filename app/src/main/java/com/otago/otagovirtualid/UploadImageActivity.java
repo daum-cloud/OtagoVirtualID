@@ -165,6 +165,8 @@ public class UploadImageActivity extends AppCompatActivity {
                                                                            public void onSuccess(Uri uri) {
                                                                                Uri downloadUrl = uri;
                                                                                dbRef.child("uRLCurrPhoto").setValue(downloadUrl.toString());
+                                                                               //Set the email field, so user gets an email when uploaded:
+                                                                               dbRef.child("emailAlertRequire").setValue("idReceived");
                                                                            }
                                                                        });
 
