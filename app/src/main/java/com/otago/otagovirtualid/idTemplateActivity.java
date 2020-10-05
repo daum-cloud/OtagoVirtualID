@@ -80,11 +80,12 @@ public class idTemplateActivity extends AppCompatActivity {
          */
         Boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
                 .getBoolean("isFirstRun", true);
-        if (isFirstRun) {
-            if(nfcAdapter==null && !nfcAdapter.isEnabled()){
-                Toast.makeText(this, "NFC not turned on", Toast.LENGTH_SHORT).show();
-            }
-        }
+        //Temp removed - as was causing issues without NFC adapter
+        //if (isFirstRun) {
+        //        if (nfcAdapter == null && !nfcAdapter.isEnabled()) {
+        //            Toast.makeText(this, "NFC not turned on", Toast.LENGTH_SHORT).show();
+        //        }
+        //}
         getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
                 .putBoolean("isFirstRun", false).commit();
 
@@ -139,7 +140,14 @@ public class idTemplateActivity extends AppCompatActivity {
                 String strDate = dateFormat.format(date);
                 txtDate.setText(strDate);
                 //Gets image from the link (going to the Cloud storage) and displays it.
-                Glide.with(idTemplateActivity.this).load(snapshot.child("uRLCurrPhoto").getValue()).into(imageIDPhoto);
+
+                //If ID is verified, show their ID
+                if (snapshot.child("verified").getValue(String.class).equals("verified")) {
+                    Glide.with(idTemplateActivity.this).load(snapshot.child("uRLCurrPhoto").getValue()).into(imageIDPhoto);
+                //Else - e.g. ID is not verified, display the following
+                } else {
+                    Glide.with(idTemplateActivity.this).load("https://firebasestorage.googleapis.com/v0/b/otago-virtual-id.appspot.com/o/systemImages%2FerrorImage.png?alt=media&token=2e86b7a6-5aef-4324-b995-6a9f7ab00e6e").into(imageIDPhoto);
+                }
                 //Setting the QR code
                 qrgEncoder = new QRGEncoder(
                         snapshot.child("studentCode").getValue(String.class), null,
