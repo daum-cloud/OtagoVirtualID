@@ -157,7 +157,7 @@ public class idTemplateActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(idTemplateActivity.this, "Error with retrieving ID. Contact System Admin IN DATABASE", Toast.LENGTH_LONG).show();
+                Toast.makeText(idTemplateActivity.this, "Error with retrieving ID. Contact Ask Otago", Toast.LENGTH_LONG).show();
             }
         });
 

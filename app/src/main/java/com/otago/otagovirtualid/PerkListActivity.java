@@ -75,7 +75,6 @@ public class PerkListActivity extends AppCompatActivity {
                     // Set layout manager to position the items
                     rvPerks.setLayoutManager(new LinearLayoutManager(PerkListActivity.this));
                 }
-
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
