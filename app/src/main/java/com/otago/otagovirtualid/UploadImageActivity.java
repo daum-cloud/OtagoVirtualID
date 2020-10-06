@@ -94,7 +94,8 @@ public class UploadImageActivity extends AppCompatActivity {
         Calendar now = Calendar.getInstance();
         int year = now.get(Calendar.YEAR);
         String yearInString = String.valueOf(year);
-        mstorageRef = FirebaseStorage.getInstance().getReference("id" + yearInString);
+        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        mstorageRef = FirebaseStorage.getInstance().getReference("userData/" + currentFirebaseUser.getUid() + "/" + yearInString);
 
         cameraBtn.setOnClickListener(new View.OnClickListener() {
             @Override
