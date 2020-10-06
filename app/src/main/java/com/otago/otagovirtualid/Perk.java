@@ -1,5 +1,16 @@
 package com.otago.otagovirtualid;
 
+import android.util.Log;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 /**Perks Class;
@@ -27,16 +38,6 @@ public class Perk {
         return pActive;
     }
 
-    private static int lastContactId = 0;
 
-    public static ArrayList<Perk> createPerkList(int numPerks) {
-        ArrayList<Perk> perks = new ArrayList<Perk>();
-
-        for (int i = 1; i <= numPerks; i++) {
-            perks.add(new Perk("*Name of retailer* " + ++lastContactId + "\n" + "*Type of discount... *", i <= numPerks / 2));
-        }
-
-        return perks ;
-    }
 
 }
