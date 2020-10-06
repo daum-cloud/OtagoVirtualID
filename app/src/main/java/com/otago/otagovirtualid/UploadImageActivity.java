@@ -167,7 +167,7 @@ public class UploadImageActivity extends AppCompatActivity {
                                                                                dbRef.child("uRLCurrPhoto").setValue(downloadUrl.toString());
                                                                                //Set the email field, so user gets an email when uploaded:
                                                                                dbRef.child("emailAlertRequire").setValue("idReceived");
-                                                                               //Set the verified, so appears in list when AskOtago Query
+                                                                               //Set the verified field, so appears in list when AskOtago verification
                                                                                dbRef.child("verified").setValue("ready");
                                                                            }
                                                                        });
