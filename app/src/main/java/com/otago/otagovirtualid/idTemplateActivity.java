@@ -156,7 +156,8 @@ public class idTemplateActivity extends AppCompatActivity {
             }
 
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(idTemplateActivity.this, "Error with retrieving ID. Contact Ask Otago", Toast.LENGTH_LONG).show();
+                Log.e("DatabaseError", error.getDetails());
+
             }
 
         });
