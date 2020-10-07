@@ -137,7 +137,10 @@ public class idTemplateActivity extends AppCompatActivity {
                 //If ID is verified, show their ID
                 if (snapshot.child("verified").getValue(String.class).equals("verified")) {
                     Glide.with(idTemplateActivity.this).load(snapshot.child("uRLCurrPhoto").getValue()).into(imageIDPhoto);
-                    //Else - e.g. ID is not verified, display the following
+                    //Else - e.g. ID requires a photo to be taken (i.e. if they need to retake, or upload for first time).
+                } else if (snapshot.child("verified").getValue(String.class).equals("false") || snapshot.child("verified").getValue(String.class).equals("retake")){
+                    Glide.with(idTemplateActivity.this).load("https://firebasestorage.googleapis.com/v0/b/otago-virtual-id.appspot.com/o/systemImages%2FsubmitImage.png?alt=media&token=d6e8bd15-778c-47e4-a5c0-b49497b30fc0").into(imageIDPhoto);
+                    // Other - if the ID hasn't been verified yet, but they've submitted an image.
                 } else {
                     Glide.with(idTemplateActivity.this).load("https://firebasestorage.googleapis.com/v0/b/otago-virtual-id.appspot.com/o/systemImages%2FerrorImage.png?alt=media&token=2e86b7a6-5aef-4324-b995-6a9f7ab00e6e").into(imageIDPhoto);
                 }
