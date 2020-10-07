@@ -165,13 +165,14 @@ public class idTemplateActivity extends AppCompatActivity {
 
         });
 
+        //When the user clicks the logout button
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 Intent loginScreen = new Intent(idTemplateActivity.this, MainActivity.class);
                 (idTemplateActivity.this).finish();
-
+                Toast.makeText(idTemplateActivity.this, "You have logged out", Toast.LENGTH_LONG).show();
                 loginScreen.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(loginScreen);
             }
