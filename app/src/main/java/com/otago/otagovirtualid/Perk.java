@@ -18,7 +18,7 @@ import java.util.ArrayList;
  *for temporary demonstration. Actual
  *real-time data to be implemented via
  *Firebase.
- */
+*/
 
 public class Perk {
 
@@ -37,7 +37,5 @@ public class Perk {
     public boolean isOnline() {
         return pActive;
     }
-
-
 
 }

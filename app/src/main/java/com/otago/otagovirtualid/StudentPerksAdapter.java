@@ -38,10 +38,11 @@ public class StudentPerksAdapter extends RecyclerView.Adapter<StudentPerksAdapte
         }
     }
 
-    // Store a member variable for the contacts
+    // Store a member variable for the perks
+
     private List<Perk> mPerks;
 
-    // Pass in the contact array into the constructor
+    // Pass in the perk array into the constructor
     public StudentPerksAdapter(List<Perk> perks) {
         mPerks = perks;
     }
@@ -54,10 +55,10 @@ public class StudentPerksAdapter extends RecyclerView.Adapter<StudentPerksAdapte
         LayoutInflater inflater = LayoutInflater.from(context);
 
         // Inflate the custom layout
-        View contactView = inflater.inflate(R.layout.perks_layout, parent, false);
+        View perksView = inflater.inflate(R.layout.perks_layout, parent, false);
 
         // Return a new holder instance
-        ViewHolder viewHolder = new ViewHolder(contactView);
+        ViewHolder viewHolder = new ViewHolder(perksView);
         return viewHolder;
     }
 

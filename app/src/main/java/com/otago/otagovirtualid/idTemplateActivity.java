@@ -155,27 +155,24 @@ public class idTemplateActivity extends AppCompatActivity {
 
             }
 
-            @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(idTemplateActivity.this, "Error with retrieving ID. Contact Ask Otago", Toast.LENGTH_LONG).show();
             }
+
         });
 
-        //calls the logout method
-        logOut();
-    }
-
-    public void logOut(){
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 Intent loginScreen = new Intent(idTemplateActivity.this, MainActivity.class);
                 (idTemplateActivity.this).finish();
+
                 loginScreen.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(loginScreen);
             }
         });
+
     }
 
     /** Setting up bottom navigation in ID Template
