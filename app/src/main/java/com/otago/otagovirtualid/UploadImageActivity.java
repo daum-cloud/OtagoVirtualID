@@ -49,7 +49,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-/**Uploading a new profile photo
+/**
+ *Uploading a new profile photo
  *Activity to provide the user the ability to update their ID
  *profile image as well as requesting for their permission to
  *use their devices' camera. The new image is uploaded to the
@@ -124,7 +125,8 @@ public class UploadImageActivity extends AppCompatActivity {
 
     }
 
-    /** Setting up bottom navigation in Upload Image
+    /**
+     * Setting up bottom navigation in Upload Image
      */
     public void setupBottomNavigationView(){
 
@@ -145,6 +147,11 @@ public class UploadImageActivity extends AppCompatActivity {
         return mime.getExtensionFromMimeType(cr.getType(uri));
     }
 
+    /**
+     * Uploading image to firebase and and adding the string url of that user to the current photo
+     * attribute setting the values of emailalertrequire so that the emai batch processor is able
+     * to send an email to that specific user
+     */
     private void FireBaseFileUploader() {
         final StorageReference ref = mstorageRef.child(System.currentTimeMillis()+"."+getExtension(imageUri));
         //Create a reference to the database to put the name of the image into the user's details
@@ -186,8 +193,10 @@ public class UploadImageActivity extends AppCompatActivity {
                 });
     }
 
-   
 
+    /**
+     * If permission has not been set then the a pop up is shown to get permission to use camera
+     */
     private void askCameraPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_CODE); //Sends out a code
@@ -197,6 +206,13 @@ public class UploadImageActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * If user has stated that is ok to use camera, then is opened, otherwise user is notified
+     * that permission needed
+     * @param requestCode the request code that states camera should be opened
+     * @param permissions
+     * @param grantResults
+     */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == CAMERA_PERMISSION_CODE) {
@@ -216,6 +232,13 @@ public class UploadImageActivity extends AppCompatActivity {
        // startActivityForResult(camera, CAMERA_REQUEST_CODE);
     //}
 
+    /**
+     * Based on what user has chosen to upload the image(gallery or camera) then the image is set
+     * to photo and submit button is able to be seen to user can submit the photo to firebase
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -235,7 +258,12 @@ public class UploadImageActivity extends AppCompatActivity {
     }
 
 
-
+    /**
+     * Creates an file for an image that is uploaded from the gallery with timestamp and stored in
+     * File variable
+     * @return
+     * @throws IOException
+     */
     private File createImageFile() throws IOException {
         // Create an image file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date()); //Could be issue with type imported
@@ -253,6 +281,9 @@ public class UploadImageActivity extends AppCompatActivity {
         return image;
     }
 
+    /**
+     * Opens camera and stores image in file variable creation of photo URi
+     */
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         // Ensure that there's a camera activity to handle the intent

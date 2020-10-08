@@ -84,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
                 mEditor.commit();
 
                 // data validation
-
                 if (TextUtils.isEmpty(username)) {
                     mUsername.setError("Username is Required");
                     return;
@@ -102,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 //authenticate the user - correct username and password to login
-
                 fAuth.signInWithEmailAndPassword(username, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {

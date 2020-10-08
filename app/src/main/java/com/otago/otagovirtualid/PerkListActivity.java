@@ -21,7 +21,8 @@ import com.otago.otagovirtualid.utils.BottomNavigationHelper;
 
 import java.util.ArrayList;
 
-/**Perks Activity class
+/**
+ *Perks Activity class
  *Creation of the perks activity window as well as
  *initiating the elements within.
  */
@@ -84,7 +85,8 @@ public class PerkListActivity extends AppCompatActivity {
 
     }
 
-    /** Setting up bottom navigation in Perks
+    /**
+     * Setting up bottom navigation in Perks
      */
     public void setupBottomNavigationView(){
 

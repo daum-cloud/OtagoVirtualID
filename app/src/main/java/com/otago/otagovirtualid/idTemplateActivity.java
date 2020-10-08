@@ -49,7 +49,8 @@ import java.util.Date;
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
 
-/**Template Display
+/**
+ *Template Display
  *Activity for displaying the ID in a certain layout for the
  *"Main Page" activity once the user has successfully logged in.
  */
@@ -180,7 +181,8 @@ public class idTemplateActivity extends AppCompatActivity {
 
     }
 
-    /** Setting up bottom navigation in ID Template
+    /**
+     * Setting up bottom navigation in ID Template
      */
     public void setupBottomNavigationView(){
 

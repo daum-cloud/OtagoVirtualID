@@ -13,7 +13,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-/**Perks Class;
+/**
+ *Perks Class
  *storing temporary values in an array
  *for temporary demonstration. Actual
  *real-time data to be implemented via
